@@ -1,0 +1,983 @@
+<!doctype html>
+<!-- 김솔민 풀스택 개발자 포트폴리오 단일 페이지 -->
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>김솔민 · Full-Stack Developer</title>
+<meta name="description" content="Java·Spring 기본기와 RAG·에이전트 실전 적용을 갖춘 풀스택 개발자 김솔민의 포트폴리오. 프로젝트 4건과 문제 해결 기록 9건.">
+<meta name="color-scheme" content="light">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+
+<!-- 좌측 고정 스파인: 현재 섹션을 추적한다 -->
+<div class="spine" aria-hidden="true">
+  <div class="spine__top">KS</div>
+  <div class="spine__label"><span data-spine-label>INDEX</span></div>
+  <div class="spine__num" data-spine-num>00</div>
+</div>
+
+<main id="main">
+
+<!-- ─────────────────────────  MASTHEAD  ───────────────────────── -->
+<header class="mast" id="top" data-section="INDEX" data-num="00">
+  <div class="mast__strip">
+    <span>Portfolio</span>
+    <span>Full-Stack Developer</span>
+    <span>2026</span>
+  </div>
+
+  <h1 class="mast__name">
+    <span class="mast__word" style="--d:0"><span>KIM</span></span>
+    <span class="mast__word" style="--d:1"><span>SOLMIN</span></span>
+  </h1>
+
+  <div class="mast__body">
+    <div class="mast__lede">
+      <p class="mast__kr">김솔민 · 풀스택 개발자</p>
+      <p>
+        Java와 Spring으로 기본기를 쌓고, RAG와 AI 에이전트를 실제 서비스에 붙여 왔습니다.
+        Spring Security와 JPA, QueryDSL을 손코딩으로 직접 구현해 보며 동작 원리를 익혔고,
+        Gemini와 Qdrant 기반 파이프라인을 프로덕션 코드로 옮겼습니다.
+      </p>
+      <p>
+        부트캠프 두 과정(GDJ79, KOSTA308)에서 팀 리딩을 세 번 맡아
+        일정 관리와 역할 분배, 팀원 기술 지원까지 담당했습니다.
+        아래에는 프로젝트 네 건과, 그 안에서 직접 원인을 찾아 고친 기록 아홉 건이 있습니다.
+      </p>
+    </div>
+
+    <dl class="contact">
+      <div class="contact__row">
+        <dt>Email</dt>
+        <dd><a href="mailto:solmin614@gmail.com">solmin614@gmail.com</a></dd>
+      </div>
+      <div class="contact__row">
+        <dt>Phone</dt>
+        <dd><a href="tel:+821063857164">010-6385-7164</a></dd>
+      </div>
+      <div class="contact__row">
+        <dt>GitHub</dt>
+        <dd><a href="https://github.com/K-SOLMIN" target="_blank" rel="noopener">github.com/K-SOLMIN</a></dd>
+      </div>
+    </dl>
+  </div>
+</header>
+
+<!-- ─────────────────────────  SKILLS  ───────────────────────── -->
+<section class="sec" id="skills" data-section="SKILLS" data-num="01">
+  <div class="sec__head">
+    <p class="eyebrow">기술 스택</p>
+    <h2 class="sec__title">Skills</h2>
+  </div>
+
+  <div class="spec">
+    <div class="spec__row">
+      <p class="spec__key">Backend</p>
+      <ul class="tags">
+        <li>Java</li><li>Spring Boot</li><li>Spring MVC</li><li>Spring Security</li>
+        <li>MyBatis</li><li>JPA</li><li>JPQL</li><li>QueryDSL</li>
+      </ul>
+    </div>
+    <div class="spec__row">
+      <p class="spec__key">Frontend</p>
+      <ul class="tags">
+        <li>HTML / CSS</li><li>JavaScript</li><li>React 19</li><li>Vite</li><li>React Router v7</li>
+      </ul>
+    </div>
+    <div class="spec__row">
+      <p class="spec__key">Database</p>
+      <ul class="tags">
+        <li>Oracle</li><li>MySQL</li><li>Redis</li><li>Qdrant</li>
+      </ul>
+    </div>
+    <div class="spec__row">
+      <p class="spec__key">AI / API</p>
+      <ul class="tags">
+        <li>Gemini 2.5 Flash</li><li>RAG Pipeline</li><li>ReAct Agent</li><li>MCP Server</li>
+      </ul>
+    </div>
+    <div class="spec__row">
+      <p class="spec__key">DevOps</p>
+      <ul class="tags">
+        <li>Git</li><li>GitHub</li><li>Docker</li><li>Docker Compose</li><li>AWS EC2</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────  INDEX  ───────────────────────── -->
+<section class="sec" id="works" data-section="WORKS" data-num="02">
+  <div class="sec__head">
+    <p class="eyebrow">프로젝트 색인 · 시간순</p>
+    <h2 class="sec__title">Works</h2>
+  </div>
+
+  <ol class="index">
+    <li class="index__item">
+      <a href="#waait">
+        <span class="index__no">01</span>
+        <span class="index__name">WAAIT</span>
+        <span class="index__desc">사내 그룹웨어 · 팀장</span>
+        <span class="index__date">2024.06 — 08</span>
+      </a>
+    </li>
+    <li class="index__item">
+      <a href="#sblim">
+        <span class="index__no">02</span>
+        <span class="index__name">SBLIM</span>
+        <span class="index__desc">시설·비품 예약 관리 · 팀장</span>
+        <span class="index__date">2024.06 — 08</span>
+      </a>
+    </li>
+    <li class="index__item">
+      <a href="#trip">
+        <span class="index__no">03</span>
+        <span class="index__name">Trip_Helper</span>
+        <span class="index__desc">AI 여행 일정 생성</span>
+        <span class="index__date">2026.05</span>
+      </a>
+    </li>
+    <li class="index__item">
+      <a href="#themoa">
+        <span class="index__no">04</span>
+        <span class="index__name">TheMoa</span>
+        <span class="index__desc">청년 자산관리 · 팀장</span>
+        <span class="index__date">2026.06 — 07</span>
+      </a>
+    </li>
+  </ol>
+</section>
+
+<!-- ─────────────────────────  01 WAAIT  ───────────────────────── -->
+<article class="proj" id="waait" data-section="WAAIT" data-num="01">
+  <header class="proj__head">
+    <p class="proj__no">01</p>
+    <h2 class="proj__name">WAAIT</h2>
+    <p class="proj__sub">사내 그룹웨어 · GDJ79 Final Project</p>
+    <ul class="proj__meta">
+      <li>2024.06 — 2024.08</li>
+      <li>팀 프로젝트 5인</li>
+      <li>팀장</li>
+    </ul>
+    <a class="repo" href="https://github.com/K-SOLMIN/erp-project-waait-2025" target="_blank" rel="noopener" aria-label="WAAIT GitHub 저장소 (새 창)">
+      GitHub 저장소 <span aria-hidden="true">↗</span>
+    </a>
+  </header>
+
+  <div class="proj__body">
+    <div class="block">
+      <p class="block__key">개요</p>
+      <div class="block__val">
+        <p>
+          Spring Framework와 Oracle로 만든 사내 그룹웨어입니다.
+          일정 관리, 근태 관리, 사내 쪽지, 인사 관리를 한 시스템에 담았고
+          5인 팀에서 팀장을 맡아 기획부터 배포까지 이끌었습니다.
+        </p>
+      </div>
+    </div>
+
+    <div class="block">
+      <p class="block__key">담당</p>
+      <div class="block__val">
+        <ul class="list">
+          <li>Spring Security 기반 로그인 · 세션 인증 · 권한별 접근 제어</li>
+          <li>사내 쪽지(메일) 기능 전반</li>
+          <li>인사 관리 — 직원 등록, 휴직·복직 상태 관리, 권한 변경</li>
+          <li>Spring Scheduler로 근태 누락 자동 감지 및 처리</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="block">
+      <p class="block__key">스택</p>
+      <div class="block__val">
+        <div class="stack">
+          <div class="stack__group">
+            <p class="stack__key">Backend</p>
+            <ul class="tags"><li>Spring MVC</li><li>Spring Security</li><li>MyBatis</li></ul>
+          </div>
+          <div class="stack__group">
+            <p class="stack__key">Frontend</p>
+            <ul class="tags"><li>JSP (EL / JSTL)</li><li>HTML / CSS</li><li>JavaScript</li></ul>
+          </div>
+          <div class="stack__group">
+            <p class="stack__key">Database</p>
+            <ul class="tags"><li>Oracle 11g</li><li>SQL Developer</li></ul>
+          </div>
+          <div class="stack__group">
+            <p class="stack__key">API / Library</p>
+            <ul class="tags"><li>FullCalendar</li><li>SSE</li><li>Spring Scheduler</li></ul>
+          </div>
+          <div class="stack__group">
+            <p class="stack__key">Build / Tools</p>
+            <ul class="tags"><li>Maven</li><li>Tomcat 8.5</li><li>STS4</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="block">
+      <p class="block__key">핵심 구현</p>
+      <div class="block__val">
+        <ul class="list">
+          <li><code>@Transactional</code>로 출퇴근 데이터 일관성 보장</li>
+          <li>세션 기반 개인화 접근 제어 (<code>SecurityConfig</code>)</li>
+          <li>Spring Scheduler로 매일 자정 근태 누락 자동 처리</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="block">
+      <p class="block__key">산출물</p>
+      <div class="block__val">
+        <ul class="tags"><li>WBS</li><li>ERD</li><li>기능명세서</li><li>유스케이스</li></ul>
+      </div>
+    </div>
+
+    <div class="block">
+      <p class="block__key">설계</p>
+      <div class="block__val block__val--wide">
+        <div class="shots shots--single">
+          <figure class="shot">
+            <button type="button" class="shot__btn" data-full="assets/waait/erd.jpg" data-cap="WAAIT · ERD">
+              <img src="assets/waait/erd.jpg" width="2400" height="1244" loading="lazy" decoding="async" alt="WAAIT 그룹웨어 ERD">
+            </button>
+            <figcaption>ERD</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="cases">
+    <p class="cases__title">문제 해결 기록 <span>3건</span></p>
+
+    <div class="case">
+      <p class="case__id">A</p>
+      <div class="case__main">
+        <h3 class="case__name">JOIN 결과에서 동명 컬럼이 덮어써짐</h3>
+        <dl class="case__track">
+          <div><dt>증상</dt><dd>두 테이블을 JOIN해 조회하면 한쪽 값이 다른 쪽 값으로 덮여 나왔습니다.</dd></div>
+          <div><dt>원인</dt><dd>양쪽 테이블에 같은 컬럼명이 존재해 MyBatis가 결과를 매핑할 때 뒤에 온 값이 앞의 값을 밀어냈습니다.</dd></div>
+          <div><dt>조치</dt><dd><code>&lt;sql&gt;</code> 태그로 별칭을 지정한 재사용 가능한 컬럼 목록을 정의하고, 각 쿼리에서 <code>&lt;include&gt;</code>로 불러 썼습니다.</dd></div>
+        </dl>
+        <p class="case__out">여러 쿼리에서 컬럼 매핑이 일관되게 유지되고, JOIN 결과를 정확히 가져오게 됐습니다.</p>
+      </div>
+    </div>
+
+    <div class="case">
+      <p class="case__id">B</p>
+      <div class="case__main">
+        <h3 class="case__name">애플리케이션에서 반복 조회하던 자기참조 관계</h3>
+        <dl class="case__track">
+          <div><dt>증상</dt><dd>같은 테이블 안의 데이터 간 관계를 조회해야 했는데, Java 코드에서 반복 조회한 뒤 조합하는 방식으로 우선 구현했습니다.</dd></div>
+          <div><dt>원인</dt><dd>Self Join 개념을 몰라 SQL로 풀 수 있는 문제를 애플리케이션 레벨로 끌고 왔습니다.</dd></div>
+          <div><dt>조치</dt><dd>Self Join을 학습하고 쿼리를 재작성했습니다.</dd></div>
+        </dl>
+        <p class="case__out">애플리케이션에서 돌던 조합 로직이 SQL 한 번으로 정리됐습니다.</p>
+      </div>
+    </div>
+
+    <div class="case">
+      <p class="case__id">C</p>
+      <div class="case__main">
+        <h3 class="case__name">첨부파일이 클수록 느려지는 다운로드</h3>
+        <dl class="case__track">
+          <div><dt>증상</dt><dd>메일 첨부파일 다운로드가 대용량일수록 눈에 띄게 느려졌습니다.</dd></div>
+          <div><dt>원인</dt><dd>기존 코드가 <code>InputStream</code>에서 1바이트씩 읽고 쓰고 있어, 파일이 커질수록 스트림 호출 횟수가 그대로 늘어났습니다.</dd></div>
+          <div><dt>조치</dt><dd>8192바이트 버퍼 배열을 두고 한 번에 여러 바이트를 읽고 쓰도록 바꿨습니다.</dd></div>
+        </dl>
+        <p class="case__out">스트림 호출 횟수가 줄면서 다운로드 속도가 개선됐습니다.</p>
+      </div>
+    </div>
+  </section>
+</article>
+
+<!-- ─────────────────────────  02 SBLIM  ───────────────────────── -->
+<article class="proj" id="sblim" data-section="SBLIM" data-num="02">
+  <header class="proj__head">
+    <p class="proj__no">02</p>
+    <h2 class="proj__name">SBLIM</h2>
+    <p class="proj__sub">학교 시설·비품 예약 관리 · KOSTA308 Mini Project</p>
+    <ul class="proj__meta">
+      <li>2024.06 — 2024.08</li>
+      <li>팀 프로젝트 2인</li>
+      <li>팀장</li>
+    </ul>
+    <a class="repo" href="https://github.com/K-SOLMIN/kosta308_mini_project" target="_blank" rel="noopener" aria-label="SBLIM GitHub 저장소 (새 창)">
+      GitHub 저장소 <span aria-hidden="true">↗</span>
+    </a>
+  </header>
+
+  <div class="proj__body">
+    <div class="block">
+      <p class="block__key">개요</p>
+      <div class="block__val">
+        <p>
+          Java와 MySQL JDBC로 만든 콘솔 기반 학교 시설·비품 예약 관리 시스템입니다.
+          교구 반납과 예약, 비품 관리, 실시간 알림을 한 시스템에서 처리합니다.
+          2인 팀에서 팀장을 맡아 기획부터 마무리까지 이끌었습니다.
+        </p>
+      </div>
+    </div>
+
+    <div class="block">
+      <p class="block__key">주제 선정</p>
+      <div class="block__val">
+        <p>
+          도서관 도서 관리의 불편에서 출발했습니다.
+          학교에서 선생님들이 도서를 수기로 관리하는 모습을 보고 비효율이 크다고 판단했고,
+          교구와 비품을 하나의 시스템에서 관리하면 정리될 부분이 많다고 봐서 이 주제를 잡았습니다.
+        </p>
+      </div>
+    </div>
+
+    <div class="block">
+      <p class="block__key">담당</p>
+      <div class="block__val">
+        <ul class="list">
+          <li>전체 ERD 설계</li>
+          <li>Socket 기반 실시간 알림</li>
+          <li>Socket을 이용한 중복 로그인 처리</li>
+          <li>시설 · 비품 CRUD</li>
+          <li>담당 도메인 SQL 쿼리 작성</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="block">
+      <p class="block__key">스택</p>
+      <div class="block__val">
+        <div class="stack">
+          <div class="stack__group">
+            <p class="stack__key">Backend</p>
+            <ul class="tags"><li>Java</li><li>JDBC</li></ul>
+          </div>
+          <div class="stack__group">
+            <p class="stack__key">Database</p>
+            <ul class="tags"><li>MySQL 8</li></ul>
+          </div>
+          <div class="stack__group">
+            <p class="stack__key">API / Library</p>
+            <ul class="tags"><li>Java Socket</li><li>Scheduler</li></ul>
+          </div>
+          <div class="stack__group">
+            <p class="stack__key">Build / Tools</p>
+            <ul class="tags"><li>Gradle</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="block">
+      <p class="block__key">핵심 구현</p>
+      <div class="block__val">
+        <ul class="list">
+          <li><code>SocketServer</code> · <code>SocketClient</code>로 실시간 알림과 중복 로그인 처리</li>
+          <li>도메인 전반의 CRUD와 조회 쿼리 직접 작성</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="block">
+      <p class="block__key">산출물</p>
+      <div class="block__val">
+        <ul class="tags"><li>ERD</li><li>기능명세서</li></ul>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- ─────────────────────────  03 TRIP_HELPER  ───────────────────────── -->
+<article class="proj" id="trip" data-section="TRIP_HELPER" data-num="03">
+  <header class="proj__head">
+    <p class="proj__no">03</p>
+    <h2 class="proj__name">Trip_Helper</h2>
+    <p class="proj__sub">AI 여행 일정 생성 서비스 · KOSTA308 Semi Project · 팀 폰가이즈</p>
+    <ul class="proj__meta">
+      <li>2026.05.01 — 2026.05.17</li>
+      <li>팀 프로젝트</li>
+      <li>프론트엔드 중심</li>
+    </ul>
+    <a class="repo" href="https://github.com/K-SOLMIN/Trip_Helper" target="_blank" rel="noopener" aria-label="Trip_Helper GitHub 저장소 (새 창)">
+      GitHub 저장소 <span aria-hidden="true">↗</span>
+    </a>
+  </header>
+
+  <div class="proj__body">
+    <div class="block">
+      <p class="block__key">개요</p>
+      <div class="block__val">
+        <p>
+          항공권 검색·예약, 숙소, eSIM, 투어·액티비티, 그리고 Gemini RAG와 ReAct Agent 기반
+          맞춤 일정 생성을 하나의 흐름으로 묶은 풀스택 여행 서비스입니다.
+        </p>
+      </div>
+    </div>
+
+    <div class="block">
+      <p class="block__key">주제 선정</p>
+      <div class="block__val">
+        <p>
+          호텔 예약과 eSIM, 투어 상품, 관광명소를 한곳에서 볼 수 있고,
+          사용자 스타일에 맞춘 일정을 만들어 주면서 여행 중 안전과 동선, 지출까지
+          관리할 수 있는 서비스를 만들고 싶었습니다.
+        </p>
+      </div>
+    </div>
+
+    <div class="block">
+      <p class="block__key">담당</p>
+      <div class="block__val">
+        <ul class="list">
+          <li>Gemini Agent 프롬프트 엔지니어링</li>
+          <li>Google Geocoding API Function Calling 구현</li>
+          <li>여행 계획, AI 일정 대기 · 결과 · 여행 중 · 여행 후 화면 전체 개발</li>
+          <li>Google Maps, 영사관, 이동시간, 숙소, 투어 API 연동</li>
+          <li>예산 초과 시 이후 일정 자동 재생성</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="block">
+      <p class="block__key">스택</p>
+      <div class="block__val">
+        <div class="stack">
+          <div class="stack__group">
+            <p class="stack__key">Frontend</p>
+            <ul class="tags"><li>React 19</li><li>Vite</li><li>Tailwind CSS</li><li>React Router v7</li></ul>
+          </div>
+          <div class="stack__group">
+            <p class="stack__key">Backend</p>
+            <ul class="tags"><li>Node.js</li><li>Express</li></ul>
+          </div>
+          <div class="stack__group">
+            <p class="stack__key">AI / Database</p>
+            <ul class="tags"><li>Gemini 2.5 Flash</li><li>Qdrant</li><li>MySQL</li><li>Redis</li></ul>
+          </div>
+          <div class="stack__group">
+            <p class="stack__key">API / Infra</p>
+            <ul class="tags"><li>Duffel API</li><li>Hotelbeds API</li><li>Google Maps API</li><li>Vercel</li><li>AWS</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="block">
+      <p class="block__key">핵심 구현</p>
+      <div class="block__val">
+        <ul class="list">
+          <li>외부 API 문서를 직접 읽고 다섯 개 이상의 서비스를 연동</li>
+          <li>AI 에이전트와 Function(Tool) Calling으로 지오코딩·경로 계산을 모델에 위임</li>
+          <li>Qdrant 벡터 DB로 RAG 파이프라인 구성</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="block">
+      <p class="block__key">구성도</p>
+      <div class="block__val block__val--wide">
+        <div class="shots shots--single">
+          <figure class="shot">
+            <button type="button" class="shot__btn" data-full="assets/trip/architecture.jpg" data-cap="Trip_Helper · 시스템 구성도">
+              <img src="assets/trip/architecture.jpg" width="1148" height="580" loading="lazy" decoding="async" alt="Trip_Helper 시스템 구성도">
+            </button>
+            <figcaption>Vercel(React) → AWS EC2 Docker(Express · NGINX) → MCP AI Agent → Gemini · Duffel · Hotelbeds · Google Maps · Tavily / MySQL · Qdrant · Redis</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <div class="block">
+      <p class="block__key">화면</p>
+      <div class="block__val block__val--wide">
+        <div class="shots">
+          <figure class="shot">
+            <button type="button" class="shot__btn" data-full="assets/trip/form.jpg" data-cap="Trip_Helper · 맞춤 입력 폼">
+              <img src="assets/trip/form.jpg" width="1800" height="943" loading="lazy" decoding="async" alt="여행지, 일정, 예산, 강도, 스타일을 단계별로 입력받는 폼">
+            </button>
+            <figcaption>맞춤 입력 폼 — 여행지 · 일정 · 예산 · 강도 · 스타일 5단계</figcaption>
+          </figure>
+          <figure class="shot">
+            <button type="button" class="shot__btn" data-full="assets/trip/generating.jpg" data-cap="Trip_Helper · 일정 생성 중">
+              <img src="assets/trip/generating.jpg" width="1800" height="949" loading="lazy" decoding="async" alt="일정 생성 진행률과 입력 조건 요약을 함께 보여주는 대기 화면">
+            </button>
+            <figcaption>생성 중 — 조건 분석 → 장소 선별 → 동선 최적화 → 일정 정리</figcaption>
+          </figure>
+          <figure class="shot">
+            <button type="button" class="shot__btn" data-full="assets/trip/result.jpg" data-cap="Trip_Helper · 생성 결과">
+              <img src="assets/trip/result.jpg" width="1800" height="947" loading="lazy" decoding="async" alt="일차별 일정과 Google Maps 동선이 표시된 결과 화면">
+            </button>
+            <figcaption>생성 결과 — 일차별 일정과 Google Maps 동선</figcaption>
+          </figure>
+          <figure class="shot">
+            <button type="button" class="shot__btn" data-full="assets/trip/live-d1.jpg" data-cap="Trip_Helper · 여행 중 1일차">
+              <img src="assets/trip/live-d1.jpg" width="1800" height="948" loading="lazy" decoding="async" alt="라이브 지도와 예산 소진율, 피로도 관리가 있는 여행 중 화면">
+            </button>
+            <figcaption>여행 중 — 라이브 지도, 예산 소진율, 피로도 관리</figcaption>
+          </figure>
+          <figure class="shot">
+            <button type="button" class="shot__btn" data-full="assets/trip/live-d2.jpg" data-cap="Trip_Helper · 여행 중 2일차">
+              <img src="assets/trip/live-d2.jpg" width="1800" height="947" loading="lazy" decoding="async" alt="위험 구간 안전 우회와 날씨 기반 옷차림 안내가 있는 여행 중 화면">
+            </button>
+            <figcaption>여행 중 — 위험 구간 안전 우회, 날씨 기반 옷차림 안내</figcaption>
+          </figure>
+          <figure class="shot">
+            <button type="button" class="shot__btn" data-full="assets/trip/hotel-list.jpg" data-cap="Trip_Helper · 숙소 검색">
+              <img src="assets/trip/hotel-list.jpg" width="1800" height="886" loading="lazy" decoding="async" alt="평점과 가격으로 정렬되는 숙소 검색 결과 목록">
+            </button>
+            <figcaption>숙소 검색 — 평점 · 가격 정렬과 할인가 표시</figcaption>
+          </figure>
+          <figure class="shot">
+            <button type="button" class="shot__btn" data-full="assets/trip/hotel-detail.jpg" data-cap="Trip_Helper · 숙소 상세">
+              <img src="assets/trip/hotel-detail.jpg" width="1800" height="882" loading="lazy" decoding="async" alt="편의시설과 요금 요약, 예약 폼이 있는 숙소 상세 화면">
+            </button>
+            <figcaption>숙소 상세 — 편의시설, 요금 요약, 예약 폼</figcaption>
+          </figure>
+          <figure class="shot">
+            <button type="button" class="shot__btn" data-full="assets/trip/photobook-cover.jpg" data-cap="Trip_Helper · 포토북 표지">
+              <img src="assets/trip/photobook-cover.jpg" width="1800" height="945" loading="lazy" decoding="async" alt="여행별 앨범 표지를 좌우로 넘겨 고르는 포토북 화면">
+            </button>
+            <figcaption>포토북 — 여행별 앨범 표지 선택</figcaption>
+          </figure>
+          <figure class="shot">
+            <button type="button" class="shot__btn" data-full="assets/trip/photobook-spread.jpg" data-cap="Trip_Helper · 포토북 펼침면">
+              <img src="assets/trip/photobook-spread.jpg" width="1800" height="945" loading="lazy" decoding="async" alt="사진과 캡션이 배치된 포토북 펼침면">
+            </button>
+            <figcaption>포토북 — 사진과 캡션이 들어간 펼침면</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="cases">
+    <p class="cases__title">문제 해결 기록 <span>3건</span></p>
+
+    <div class="case">
+      <p class="case__id">A</p>
+      <div class="case__main">
+        <h3 class="case__name">장기 일정에서 LLM 응답 JSON이 잘림</h3>
+        <dl class="case__track">
+          <div><dt>증상</dt><dd>14박 일정을 생성하면 JSON이 중간에서 끊기고 전체 파싱이 실패했습니다.</dd></div>
+          <div><dt>원인</dt><dd>모든 날짜와 장소를 단일 응답으로 요구해 모델의 최대 출력 토큰을 넘겼습니다.</dd></div>
+          <div><dt>조치</dt><dd>생성을 <strong>날짜별 도시 배정</strong>과 <strong>상세 일정 작성</strong> 2단계로 분리해 호출당 출력량을 줄였고, 파서에는 응답이 잘려도 마지막 완전한 일차까지 복구하는 폴백을 넣었습니다.</dd></div>
+        </dl>
+        <p class="case__out">장기 일정에서도 생성이 실패하지 않고, 부분 손실이 나도 유효한 일정을 내놓습니다.</p>
+      </div>
+    </div>
+
+    <div class="case">
+      <p class="case__id">B</p>
+      <div class="case__main">
+        <h3 class="case__name">재시도가 오히려 한도 초과를 반복시킴</h3>
+        <dl class="case__track">
+          <div><dt>증상</dt><dd>무료 등급 호출 한도에 걸려 AI 기능이 멈췄고, 재시도해도 회복되지 않았습니다.</dd></div>
+          <div><dt>원인</dt><dd>고정 간격 재시도가 동시에 실패한 요청들을 같은 시점에 몰아넣어 429를 다시 유발했습니다. 또 분당 한도 초과와 일일 할당량 소진을 같은 429로 취급해, 회복 불가능한 경우에도 최대 2분을 대기했습니다.</dd></div>
+          <div><dt>조치</dt><dd>지수 백오프에 무작위 지연을 더해 재시도 시점을 분산시키고, 두 종류의 429를 구분해 일일 할당량 소진은 즉시 중단하도록 했습니다. 재시도로도 실패하면 다른 제공사 모델로 전환합니다.</dd></div>
+        </dl>
+        <p class="case__out">회복 불가능한 오류의 불필요한 대기가 사라지고, 한도에 걸려도 기능이 멈추지 않습니다.</p>
+      </div>
+    </div>
+
+    <div class="case">
+      <p class="case__id">C</p>
+      <div class="case__main">
+        <h3 class="case__name">예산 재조정에서 존재하지 않는 식당을 생성</h3>
+        <dl class="case__track">
+          <div><dt>증상</dt><dd>예산을 줄여 달라고 하면 AI가 실제로 없는 식당을 만들어 내거나, 오히려 비용이 늘어난 결과를 돌려줬습니다.</dd></div>
+          <div><dt>원인</dt><dd>제약을 프롬프트에 적어 두는 것만으로는 모델이 지킨다고 보장할 수 없었습니다.</dd></div>
+          <div><dt>조치</dt><dd>지도 API로 반경 2km 안의 실제 저가 후보를 조회해 프롬프트에 주입하고, 응답이 그 목록에서 선택됐는지와 비용이 늘지 않았는지를 코드로 검증했습니다. 검증에 실패하면 가장 적합한 후보로 자동 교체합니다.</dd></div>
+        </dl>
+        <p class="case__out">AI 출력을 제안으로 두고 최종 결정은 코드가 내리는 구조가 되면서, 예산 재조정 결과를 신뢰할 수 있게 됐습니다.</p>
+      </div>
+    </div>
+  </section>
+</article>
+
+<!-- ─────────────────────────  04 THEMOA  ───────────────────────── -->
+<article class="proj" id="themoa" data-section="THEMOA" data-num="04">
+  <header class="proj__head">
+    <p class="proj__no">04</p>
+    <h2 class="proj__name">TheMoa</h2>
+    <p class="proj__sub">청년 자산관리 서비스 · KOSTA308 Final Project</p>
+    <ul class="proj__meta">
+      <li>2026.06.28 — 2026.07.27</li>
+      <li>팀 프로젝트</li>
+      <li>팀장</li>
+    </ul>
+    <a class="repo" href="https://github.com/kosta308-FINAL/themoa" target="_blank" rel="noopener" aria-label="TheMoa GitHub 저장소 (새 창)">
+      GitHub 저장소 <span aria-hidden="true">↗</span>
+    </a>
+  </header>
+
+  <div class="proj__body">
+    <div class="block">
+      <p class="block__key">개요</p>
+      <div class="block__val">
+        <p>
+          Spring AI 기반 청년 자산관리 서비스입니다.
+          고정지출 관리와 소비 가이드부터 맞춤형 청년정책·금융상품 추천까지
+          하나의 서비스에서 제공합니다.
+        </p>
+      </div>
+    </div>
+
+    <div class="block">
+      <p class="block__key">주제 선정</p>
+      <div class="block__val">
+        <p>
+          첫 월급을 받은 사회초년생이 큰돈을 어떻게 쓰고 남은 돈을 어떻게 굴려야 하는지
+          가이드해 주는 서비스를 만들고 싶었습니다.
+          여기에 사용자 맞춤 정책을 붙여 아낄 수 있는 부분까지 한 서비스에서 보여 주려 했습니다.
+        </p>
+      </div>
+    </div>
+
+    <div class="block">
+      <p class="block__key">담당</p>
+      <div class="block__val">
+        <ul class="list">
+          <li>JWT · Spring Security · OAuth 2.0 (Google, Kakao) 인증 전반</li>
+          <li>Qdrant 기반 RAG 고객상담 AI 챗봇</li>
+          <li>관리자 — 고객문의, RAG 문서 보강, API 응답속도, 로깅 파일</li>
+          <li>고정지출 · 소비가이드 · 마이페이지</li>
+          <li>AWS 배포</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="block">
+      <p class="block__key">스택</p>
+      <div class="block__val">
+        <div class="stack">
+          <div class="stack__group">
+            <p class="stack__key">Frontend</p>
+            <ul class="tags"><li>React 19</li><li>Vite</li><li>React Router v7</li><li>Axios</li></ul>
+          </div>
+          <div class="stack__group">
+            <p class="stack__key">Backend</p>
+            <ul class="tags"><li>Java</li><li>Spring Boot</li><li>Spring Data JPA</li><li>Spring Security</li><li>OAuth2 Client</li><li>JWT</li></ul>
+          </div>
+          <div class="stack__group">
+            <p class="stack__key">AI / Database</p>
+            <ul class="tags"><li>GPT-4.1-mini</li><li>text-embedding-3-small</li><li>Google GenAI</li><li>Qdrant</li><li>MySQL</li></ul>
+          </div>
+          <div class="stack__group">
+            <p class="stack__key">API / Infra</p>
+            <ul class="tags"><li>CODEF API</li><li>환율 API</li><li>AWS EC2 · S3 · SSM</li><li>GitHub Actions</li></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="block">
+      <p class="block__key">핵심 구현</p>
+      <div class="block__val">
+        <ul class="list">
+          <li>AI가 답변하지 못한 질문을 관리자 화면에서 확인하고, 최소·최대 청크와 문단 분할 옵션을 지정해 문서를 즉시 임베딩</li>
+          <li>로그를 레벨별로 분리 저장 — <code>debug</code>·<code>info</code>·<code>warn</code>은 한 파일, <code>error</code>는 별도 파일. 1개월 지난 파일은 삭제</li>
+          <li>Spring Actuator로 API 응답속도를 수집해 관리자 화면에서 조회</li>
+          <li>카테고리별 사용 비율과 직전 주기를 막대그래프로 비교하는 소비 가이드</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="block">
+      <p class="block__key">사용자 화면</p>
+      <div class="block__val block__val--wide">
+        <div class="shots">
+          <figure class="shot">
+            <button type="button" class="shot__btn" data-full="assets/themoa/dashboard.jpg" data-cap="TheMoa · 대시보드">
+              <img src="assets/themoa/dashboard.jpg" width="1800" height="945" loading="lazy" decoding="async" alt="소비가이드, 고정지출, 금융상품, 정책을 한 화면에 모은 대시보드">
+            </button>
+            <figcaption>대시보드 — 소비가이드 · 고정지출 · 금융상품 · 정책</figcaption>
+          </figure>
+          <figure class="shot">
+            <button type="button" class="shot__btn" data-full="assets/themoa/dayguide.jpg" data-cap="TheMoa · 소비가이드">
+              <img src="assets/themoa/dayguide.jpg" width="1800" height="914" loading="lazy" decoding="async" alt="하루 권장액과 카테고리별 사용 비율, 잉여금을 보여주는 소비가이드">
+            </button>
+            <figcaption>소비가이드 — 하루 권장액, 카테고리별 사용 비율, 잉여금</figcaption>
+          </figure>
+          <figure class="shot">
+            <button type="button" class="shot__btn" data-full="assets/themoa/fixed-expense.jpg" data-cap="TheMoa · 고정지출">
+              <img src="assets/themoa/fixed-expense.jpg" width="1800" height="947" loading="lazy" decoding="async" alt="고정지출 관리 화면">
+            </button>
+            <figcaption>고정지출</figcaption>
+          </figure>
+          <figure class="shot">
+            <button type="button" class="shot__btn" data-full="assets/themoa/transaction-detail.jpg" data-cap="TheMoa · 지출 상세">
+              <img src="assets/themoa/transaction-detail.jpg" width="1800" height="947" loading="lazy" decoding="async" alt="이전 날짜 지출 그래프와 계좌이체성 결제 등록이 있는 지출 상세">
+            </button>
+            <figcaption>지출 상세 — 이전 날짜 지출 그래프, 계좌이체성 결제 등록</figcaption>
+          </figure>
+          <figure class="shot">
+            <button type="button" class="shot__btn" data-full="assets/themoa/category-detail.jpg" data-cap="TheMoa · 카테고리 사용 비율">
+              <img src="assets/themoa/category-detail.jpg" width="1800" height="919" loading="lazy" decoding="async" alt="직전 주기와 막대그래프로 비교하는 카테고리별 사용 비율">
+            </button>
+            <figcaption>카테고리 사용 비율 — 직전 주기와 막대그래프로 비교</figcaption>
+          </figure>
+          <figure class="shot">
+            <button type="button" class="shot__btn" data-full="assets/themoa/customer-service.jpg" data-cap="TheMoa · 고객센터">
+              <img src="assets/themoa/customer-service.jpg" width="1800" height="943" loading="lazy" decoding="async" alt="FAQ와 RAG 기반 상담 챗봇이 있는 고객센터">
+            </button>
+            <figcaption>고객센터 — FAQ와 RAG 기반 상담 챗봇</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <div class="block">
+      <p class="block__key">관리자 화면</p>
+      <div class="block__val block__val--wide">
+        <div class="shots">
+          <figure class="shot">
+            <button type="button" class="shot__btn" data-full="assets/themoa/admin-faq.jpg" data-cap="TheMoa · 관리자 FAQ">
+              <img src="assets/themoa/admin-faq.jpg" width="1800" height="945" loading="lazy" decoding="async" alt="AI가 답변하지 못한 질문을 모아 보여주는 관리자 FAQ 화면">
+            </button>
+            <figcaption>FAQ — AI가 답변하지 못한 질문 확인</figcaption>
+          </figure>
+          <figure class="shot">
+            <button type="button" class="shot__btn" data-full="assets/themoa/admin-knowledge.jpg" data-cap="TheMoa · 관리자 지식 보강">
+              <img src="assets/themoa/admin-knowledge.jpg" width="1800" height="947" loading="lazy" decoding="async" alt="청크 크기와 문단 분할 옵션을 지정해 문서를 임베딩하는 화면">
+            </button>
+            <figcaption>지식 보강 — 청크 크기 · 문단 분할 옵션을 지정해 문서 임베딩</figcaption>
+          </figure>
+          <figure class="shot">
+            <button type="button" class="shot__btn" data-full="assets/themoa/admin-latency.jpg" data-cap="TheMoa · 관리자 응답속도">
+              <img src="assets/themoa/admin-latency.jpg" width="1800" height="946" loading="lazy" decoding="async" alt="Spring Actuator로 수집한 API 응답속도 조회 화면">
+            </button>
+            <figcaption>응답속도 — Spring Actuator로 수집한 API 지연 조회</figcaption>
+          </figure>
+          <figure class="shot">
+            <button type="button" class="shot__btn" data-full="assets/themoa/admin-logfile.jpg" data-cap="TheMoa · 관리자 로그">
+              <img src="assets/themoa/admin-logfile.jpg" width="1800" height="548" loading="lazy" decoding="async" alt="레벨별로 분리 저장된 로그 파일 조회 화면">
+            </button>
+            <figcaption>로그 — 레벨별 분리 저장, 1개월 경과 파일 삭제</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="proj__body">
+    <div class="block">
+      <p class="block__key">기술 선택</p>
+      <div class="block__val">
+        <div class="choices">
+          <div class="choice">
+            <h3 class="choice__name">Spring Boot</h3>
+            <p>
+              Spring AI가 VectorStore와 ChatClient 추상화로 RAG 파이프라인
+              (임베딩 → 검색 → LLM 응답)을 표준화해 주고,
+              Spring Security(OAuth2 · JWT)로 인증까지 한 생태계에서 처리할 수 있어 골랐습니다.
+            </p>
+          </div>
+          <div class="choice">
+            <h3 class="choice__name">JSP가 아닌 React</h3>
+            <p>
+              JSP는 화면 렌더링이 서버 로직과 강하게 묶여 있어
+              AI 응답 대기 상태나 비동기 챗봇 인터랙션 같은 UX를 만들기 어렵습니다.
+              React SPA + REST API로 분리해 AI 응답을 비동기로 처리하고,
+              프론트와 백엔드를 따로 배포·확장할 수 있게 했습니다.
+            </p>
+          </div>
+          <div class="choice">
+            <h3 class="choice__name">pgvector가 아닌 Qdrant</h3>
+            <p>
+              회원·지출·예적금 같은 정형 데이터는 이미 MySQL로 관리하고 있어,
+              임베딩 유사도 검색만 담당할 벡터 전용 DB가 필요했습니다.
+              RDB에 확장으로 얹는 대신 Qdrant를 따로 두어
+              정책·금융상품·고객상담 지식을 컬렉션 단위로 독립 관리하고,
+              HNSW 인덱싱으로 검색 성능을 확보했습니다.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="block">
+      <p class="block__key">협업</p>
+      <div class="block__val block__val--wide">
+        <ul class="list">
+          <li>API 키와 DB 접속정보가 Git에 올라가지 않도록 <code>.env</code>와 <code>application.yaml</code>을 Notion으로 공유·버전관리해 팀원 간 설정값 불일치를 막았습니다.</li>
+          <li>남은 작업과 결정된 사항을 다시 확인할 수 있도록 회의록을 남겼습니다.</li>
+          <li>Discord 웹훅으로 특정 브랜치에 merge되면 어떤 작업이 끝났는지 알리고, 바로 pull 받아 이어 작업할 수 있게 했습니다.</li>
+        </ul>
+
+        <div class="shots">
+          <figure class="shot">
+            <button type="button" class="shot__btn" data-full="assets/themoa/notion-board.jpg" data-cap="TheMoa · Notion 보드">
+              <img src="assets/themoa/notion-board.jpg" width="1800" height="1090" loading="lazy" decoding="async" alt="회의록과 브랜치 규칙이 정리된 Notion 보드">
+            </button>
+            <figcaption>보드 — 회의록과 브랜치 규칙</figcaption>
+          </figure>
+          <figure class="shot">
+            <button type="button" class="shot__btn" data-full="assets/themoa/notion-md.jpg" data-cap="TheMoa · Notion 기능별 명세">
+              <img src="assets/themoa/notion-md.jpg" width="1800" height="1093" loading="lazy" decoding="async" alt="정책, 금융, 소비가이드 등 기능별 명세 문서 목록">
+            </button>
+            <figcaption>기능별 명세 문서</figcaption>
+          </figure>
+          <figure class="shot">
+            <button type="button" class="shot__btn" data-full="assets/themoa/notion-env.jpg" data-cap="TheMoa · Notion 환경변수 공유">
+              <img src="assets/themoa/notion-env.jpg" width="1800" height="921" loading="lazy" decoding="async" alt="팀원 간 환경변수를 공유하고 버전관리하는 Notion 페이지">
+            </button>
+            <figcaption>환경변수 공유 · 버전관리</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <div class="block">
+      <p class="block__key">코딩 에이전트</p>
+      <div class="block__val">
+        <div class="ab">
+          <div class="ab__side">
+            <p class="ab__key">문제</p>
+            <p>세 명이 각자 다른 세션에서 에이전트에 구현을 맡기다 보니, 요청 범위 밖 파일을 건드리거나 결정되지 않은 사항을 임의로 판단하는 일이 잦았습니다.</p>
+          </div>
+          <div class="ab__side">
+            <p class="ab__key">해결</p>
+            <p>디렉토리별로 역할을 나눈 규칙 문서를 두고, 코드를 생성·수정하기 전에 반드시 참조하도록 규칙을 걸었습니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="block">
+      <p class="block__key">배포</p>
+      <div class="block__val">
+        <ul class="list">
+          <li>ALB를 단일 진입점으로 구성</li>
+          <li>Web · App EC2, RDS, Qdrant를 private 영역에 배치</li>
+          <li>SSH 접속을 제거하고 AWS SSM Session Manager 사용</li>
+          <li>ALB + ACM으로 HTTPS 처리 및 HTTP 리다이렉트 적용</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <section class="cases">
+    <p class="cases__title">문제 해결 기록 <span>3건</span></p>
+
+    <div class="case">
+      <p class="case__id">A</p>
+      <div class="case__main">
+        <h3 class="case__name">2초 폴링이 참조 데이터까지 매번 다시 조회</h3>
+        <dl class="case__track">
+          <div><dt>증상</dt><dd>2초 간격 폴링 구간에서 N+1이 발생하고 있었습니다. 관리자 화면의 API 응답속도 지표를 보고 찾아냈습니다.</dd></div>
+          <div><dt>원인</dt><dd>카드사 코드와 이름처럼 거의 바뀌지 않는 참조 데이터를 폴링할 때마다 다시 조회했습니다.</dd></div>
+          <div><dt>조치</dt><dd>사실상 화이트리스트로 판단해 Caffeine 캐시를 적용했습니다.</dd></div>
+        </dl>
+        <p class="case__out">폴링 주기마다 반복되던 참조 데이터 조회가 사라졌습니다.</p>
+      </div>
+    </div>
+
+    <div class="case">
+      <p class="case__id">B</p>
+      <div class="case__main">
+        <h3 class="case__name">LazyInitializationException</h3>
+        <dl class="case__track">
+          <div><dt>증상</dt><dd>처리 단계에서 연관 엔티티에 접근하면 예외가 났습니다.</dd></div>
+          <div><dt>원인</dt><dd>조회 트랜잭션과 처리 트랜잭션이 분리돼 있어, LAZY 프록시에 접근하는 시점에는 이미 트랜잭션이 끝나 있었습니다.</dd></div>
+          <div><dt>조치</dt><dd><code>join fetch</code>로 프록시가 아닌 실제 객체를 미리 가져오도록 바꿨습니다.</dd></div>
+        </dl>
+        <p class="case__out">트랜잭션 경계를 넘어가도 필요한 연관 데이터에 안전하게 접근합니다.</p>
+      </div>
+    </div>
+
+    <div class="case case--metric">
+      <p class="case__id">C</p>
+      <div class="case__main">
+        <h3 class="case__name">승인내역 수집의 레코드당 중복 확인 조회</h3>
+        <dl class="case__track">
+          <div><dt>증상</dt><dd>212건을 수집하는 데 조회가 216번 실행됐습니다.</dd></div>
+          <div><dt>원인</dt><dd>승인내역을 한 건씩 저장하면서, 이미 저장된 거래인지 확인하는 조회를 건마다 실행했습니다.</dd></div>
+          <div><dt>조치</dt><dd>승인번호를 모아 <code>IN</code>절로 한 번에 조회해 두고, 그 목록에 없는 건만 신규로 확정했습니다.</dd></div>
+        </dl>
+        <p class="case__metric">
+          <span class="case__from">216회</span>
+          <span class="case__arrow" aria-hidden="true">→</span>
+          <span class="case__to">4회</span>
+          <span class="case__metric-label">동일 작업 기준 쿼리 실행 횟수</span>
+        </p>
+      </div>
+    </div>
+  </section>
+</article>
+
+<!-- ─────────────────────────  EDUCATION  ───────────────────────── -->
+<section class="sec" id="education" data-section="EDUCATION" data-num="05">
+  <div class="sec__head">
+    <p class="eyebrow">교육</p>
+    <h2 class="sec__title">Education</h2>
+  </div>
+
+  <div class="edu">
+    <article class="edu__item">
+      <p class="edu__date">2024.02 — 2024.08</p>
+      <div class="edu__main">
+        <h3 class="edu__name">CLOUD 활용 Java 백엔드 개발자 양성과정</h3>
+        <p class="edu__org">구디아카데미 · GDJ79 · 수료</p>
+        <ul class="list">
+          <li>Java, JSP, Spring Framework, Oracle 기반 웹 개발</li>
+          <li>HTML / CSS, JavaScript, EL / JSTL, jQuery</li>
+          <li>Spring Security, MyBatis, Ajax</li>
+          <li>세미 프로젝트 1회, 파이널 프로젝트 1회 수행</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="edu__item">
+      <p class="edu__date">2026.02 — 2026.07</p>
+      <div class="edu__main">
+        <h3 class="edu__name">생성형 AI 활용 풀스택 개발자 양성과정</h3>
+        <p class="edu__org">한국소프트웨어진흥협회 · KOSTA308 · 수료</p>
+        <ul class="list">
+          <li>Node.js, Spring Framework, MySQL 기반 웹 개발</li>
+          <li>React, JavaScript, Python</li>
+          <li>Spring Security, JWT, JPA, Thymeleaf, OAuth 2.0, 외부 API 연동</li>
+          <li>서브 1회, 미니 1회, 세미 1회, 파이널 1회 프로젝트 수행</li>
+        </ul>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ─────────────────────────  CONTACT  ───────────────────────── -->
+<footer class="end" id="contact" data-section="CONTACT" data-num="06">
+  <p class="end__eyebrow">연락</p>
+  <p class="end__line">함께 일할 기회를<br>기다리고 있습니다.</p>
+
+  <ul class="end__links">
+    <li><a href="mailto:solmin614@gmail.com">solmin614@gmail.com</a></li>
+    <li><a href="tel:+821063857164">010-6385-7164</a></li>
+    <li><a href="https://github.com/K-SOLMIN" target="_blank" rel="noopener">github.com/K-SOLMIN</a></li>
+  </ul>
+
+  <div class="end__foot">
+    <span>김솔민 · Full-Stack Developer</span>
+    <a href="#top">맨 위로 ↑</a>
+  </div>
+</footer>
+
+</main>
+
+<!-- 스크린샷 확대 보기 -->
+<dialog class="lb" id="lightbox" aria-label="이미지 확대 보기">
+  <button type="button" class="lb__close" data-lb-close>닫기 <span aria-hidden="true">✕</span></button>
+  <img class="lb__img" alt="">
+  <p class="lb__cap"></p>
+</dialog>
+
+<script src="script.js"></script>
+</body>
+</html>
