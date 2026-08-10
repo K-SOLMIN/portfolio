@@ -276,7 +276,11 @@
   }
 
   /* ── 스파인 섹션 추적 ───────────────────────────────────────── */
-  var sections = Array.prototype.slice.call(document.querySelectorAll('[data-section]'));
+  // 프로젝트 상세는 스크롤 흐름에 없다(책장에서만 연다). 감춰진 요소는 offsetTop이 0이라
+  // 기준선 비교에서 항상 걸려 스파인이 문서 첫 화면에서 THEMOA를 가리키게 된다.
+  var sections = Array.prototype.slice
+    .call(document.querySelectorAll('[data-section]'))
+    .filter(function (el) { return !el.classList.contains('proj'); });
   var labelEl = document.querySelector('[data-spine-label]');
   var numEl = document.querySelector('[data-spine-num]');
 

@@ -12,6 +12,9 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css">
 <link rel="stylesheet" href="styles.css">
+<!-- JS가 없으면 책장이 동작하지 않아 프로젝트에 접근할 방법이 사라진다.
+     이때만 상세를 스크롤 흐름으로 되돌린다. -->
+<noscript><style>.proj { display: block; }</style></noscript>
 </head>
 <body>
 
@@ -55,14 +58,24 @@
     <div class="mast__lede">
       <p class="mast__kr">김솔민 · 풀스택 개발자</p>
       <p>
-        Java와 Spring으로 기본기를 쌓고, RAG와 AI 에이전트를 실제 서비스에 붙여 왔습니다.
-        Spring Security와 JPA, QueryDSL을 손코딩으로 직접 구현해 보며 동작 원리를 익혔고,
-        Gemini와 Qdrant 기반 파이프라인을 프로덕션 코드로 옮겼습니다.
+        <span class="sn">
+          <span class="cl">Java와 Spring으로 기본기를 쌓고,</span>
+          <span class="cl">RAG와 AI 에이전트를 실제 서비스에 붙여 왔습니다.</span>
+        </span>
+        <span class="sn">
+          <span class="cl">Spring Security와 JPA, QueryDSL을 손코딩으로 직접 구현해 보며 동작 원리를 익혔고,</span>
+          <span class="cl">Gemini와 Qdrant 기반 파이프라인을 프로덕션 코드로 옮겼습니다.</span>
+        </span>
       </p>
       <p>
-        부트캠프 두 과정(GDJ79, KOSTA308)에서 팀 리딩을 세 번 맡아
-        일정 관리와 역할 분배, 팀원 기술 지원까지 담당했습니다.
-        아래에는 프로젝트 네 건과, 그 안에서 직접 원인을 찾아 고친 기록 아홉 건이 있습니다.
+        <span class="sn">
+          <span class="cl">부트캠프 두 과정(GDJ79, KOSTA308)에서 팀 리딩을 세 번 맡아</span>
+          <span class="cl">일정 관리와 역할 분배, 팀원 기술 지원까지 담당했습니다.</span>
+        </span>
+        <span class="sn">
+          <span class="cl">아래에는 프로젝트 네 건과,</span>
+          <span class="cl">그 안에서 직접 원인을 찾아 고친 기록 아홉 건이 있습니다.</span>
+        </span>
       </p>
     </div>
 
@@ -194,9 +207,11 @@
       <p class="block__key">개요</p>
       <div class="block__val">
         <p>
-          Spring Framework와 Oracle로 만든 사내 그룹웨어입니다.
-          일정 관리, 근태 관리, 사내 쪽지, 인사 관리를 한 시스템에 담았고
-          5인 팀에서 팀장을 맡아 기획부터 배포까지 이끌었습니다.
+          <span class="sn"><span class="cl">Spring Framework와 Oracle로 만든 사내 그룹웨어입니다.</span></span>
+          <span class="sn">
+            <span class="cl">일정 관리, 근태 관리, 사내 쪽지, 인사 관리를 한 시스템에 담았고</span>
+            <span class="cl">5인 팀에서 팀장을 맡아 기획부터 배포까지 이끌었습니다.</span>
+          </span>
         </p>
       </div>
     </div>
@@ -282,11 +297,11 @@
       <div class="case__main">
         <h3 class="case__name">JOIN 결과에서 동명 컬럼이 덮어써짐</h3>
         <dl class="case__track">
-          <div><dt>증상</dt><dd>두 테이블을 JOIN해 조회하면 한쪽 값이 다른 쪽 값으로 덮여 나왔습니다.</dd></div>
-          <div><dt>원인</dt><dd>양쪽 테이블에 같은 컬럼명이 존재해 MyBatis가 결과를 매핑할 때 뒤에 온 값이 앞의 값을 밀어냈습니다.</dd></div>
-          <div><dt>조치</dt><dd><code>&lt;sql&gt;</code> 태그로 별칭을 지정한 재사용 가능한 컬럼 목록을 정의하고, 각 쿼리에서 <code>&lt;include&gt;</code>로 불러 썼습니다.</dd></div>
+          <div><dt>증상</dt><dd><span class="cl">두 테이블을 JOIN해 조회하면</span> <span class="cl">한쪽 값이 다른 쪽 값으로 덮여 나왔습니다.</span></dd></div>
+          <div><dt>원인</dt><dd><span class="cl">양쪽 테이블에 같은 컬럼명이 존재해</span> <span class="cl">MyBatis가 결과를 매핑할 때 뒤에 온 값이 앞의 값을 밀어냈습니다.</span></dd></div>
+          <div><dt>조치</dt><dd><span class="cl"><code>&lt;sql&gt;</code> 태그로 별칭을 지정한 재사용 가능한 컬럼 목록을 정의하고,</span> <span class="cl">각 쿼리에서 <code>&lt;include&gt;</code>로 불러 썼습니다.</span></dd></div>
         </dl>
-        <p class="case__out">여러 쿼리에서 컬럼 매핑이 일관되게 유지되고, JOIN 결과를 정확히 가져오게 됐습니다.</p>
+        <p class="case__out"><span class="cl">여러 쿼리에서 컬럼 매핑이 일관되게 유지되고,</span> <span class="cl">JOIN 결과를 정확히 가져오게 됐습니다.</span></p>
       </div>
     </div>
 
@@ -295,8 +310,8 @@
       <div class="case__main">
         <h3 class="case__name">애플리케이션에서 반복 조회하던 자기참조 관계</h3>
         <dl class="case__track">
-          <div><dt>증상</dt><dd>같은 테이블 안의 데이터 간 관계를 조회해야 했는데, Java 코드에서 반복 조회한 뒤 조합하는 방식으로 우선 구현했습니다.</dd></div>
-          <div><dt>원인</dt><dd>Self Join 개념을 몰라 SQL로 풀 수 있는 문제를 애플리케이션 레벨로 끌고 왔습니다.</dd></div>
+          <div><dt>증상</dt><dd><span class="cl">같은 테이블 안의 데이터 간 관계를 조회해야 했는데,</span> <span class="cl">Java 코드에서 반복 조회한 뒤 조합하는 방식으로 우선 구현했습니다.</span></dd></div>
+          <div><dt>원인</dt><dd><span class="cl">Self Join 개념을 몰라</span> <span class="cl">SQL로 풀 수 있는 문제를 애플리케이션 레벨로 끌고 왔습니다.</span></dd></div>
           <div><dt>조치</dt><dd>Self Join을 학습하고 쿼리를 재작성했습니다.</dd></div>
         </dl>
         <p class="case__out">애플리케이션에서 돌던 조합 로직이 SQL 한 번으로 정리됐습니다.</p>
@@ -309,10 +324,10 @@
         <h3 class="case__name">첨부파일이 클수록 느려지는 다운로드</h3>
         <dl class="case__track">
           <div><dt>증상</dt><dd>메일 첨부파일 다운로드가 대용량일수록 눈에 띄게 느려졌습니다.</dd></div>
-          <div><dt>원인</dt><dd>기존 코드가 <code>InputStream</code>에서 1바이트씩 읽고 쓰고 있어, 파일이 커질수록 스트림 호출 횟수가 그대로 늘어났습니다.</dd></div>
-          <div><dt>조치</dt><dd>8192바이트 버퍼 배열을 두고 한 번에 여러 바이트를 읽고 쓰도록 바꿨습니다.</dd></div>
+          <div><dt>원인</dt><dd><span class="cl">기존 코드가 <code>InputStream</code>에서 1바이트씩 읽고 쓰고 있어,</span> <span class="cl">파일이 커질수록 스트림 호출 횟수가 그대로 늘어났습니다.</span></dd></div>
+          <div><dt>조치</dt><dd><span class="cl">8192바이트 버퍼 배열을 두고</span> <span class="cl">한 번에 여러 바이트를 읽고 쓰도록 바꿨습니다.</span></dd></div>
         </dl>
-        <p class="case__out">스트림 호출 횟수가 줄면서 다운로드 속도가 개선됐습니다.</p>
+        <p class="case__out"><span class="cl">스트림 호출 횟수가 줄면서</span> <span class="cl">다운로드 속도가 개선됐습니다.</span></p>
       </div>
     </div>
   </section>
@@ -339,9 +354,9 @@
       <p class="block__key">개요</p>
       <div class="block__val">
         <p>
-          Java와 MySQL JDBC로 만든 콘솔 기반 학교 시설·비품 예약 관리 시스템입니다.
-          교구 반납과 예약, 비품 관리, 실시간 알림을 한 시스템에서 처리합니다.
-          2인 팀에서 팀장을 맡아 기획부터 마무리까지 이끌었습니다.
+          <span class="sn"><span class="cl">Java와 MySQL JDBC로 만든 콘솔 기반 학교 시설·비품 예약 관리 시스템입니다.</span></span>
+          <span class="sn"><span class="cl">교구 반납과 예약, 비품 관리, 실시간 알림을 한 시스템에서 처리합니다.</span></span>
+          <span class="sn"><span class="cl">2인 팀에서 팀장을 맡아 기획부터 마무리까지 이끌었습니다.</span></span>
         </p>
       </div>
     </div>
@@ -350,9 +365,11 @@
       <p class="block__key">주제 선정</p>
       <div class="block__val">
         <p>
-          도서관 도서 관리의 불편에서 출발했습니다.
-          학교에서 선생님들이 도서를 수기로 관리하는 모습을 보고 비효율이 크다고 판단했고,
-          교구와 비품을 하나의 시스템에서 관리하면 정리될 부분이 많다고 봐서 이 주제를 잡았습니다.
+          <span class="sn"><span class="cl">도서관 도서 관리의 불편에서 출발했습니다.</span></span>
+          <span class="sn">
+            <span class="cl">학교에서 선생님들이 도서를 수기로 관리하는 모습을 보고 비효율이 크다고 판단했고,</span>
+            <span class="cl">교구와 비품을 하나의 시스템에서 관리하면 정리될 부분이 많다고 봐서 이 주제를 잡았습니다.</span>
+          </span>
         </p>
       </div>
     </div>
@@ -434,8 +451,9 @@
       <p class="block__key">개요</p>
       <div class="block__val">
         <p>
-          항공권 검색·예약, 숙소, eSIM, 투어·액티비티, 그리고 Gemini RAG와 ReAct Agent 기반
-          맞춤 일정 생성을 하나의 흐름으로 묶은 풀스택 여행 서비스입니다.
+          <span class="cl">항공권 검색·예약, 숙소, eSIM, 투어·액티비티,</span>
+          <span class="cl">그리고 Gemini RAG와 ReAct Agent 기반 맞춤 일정 생성을</span>
+          <span class="cl">하나의 흐름으로 묶은 풀스택 여행 서비스입니다.</span>
         </p>
       </div>
     </div>
@@ -444,9 +462,9 @@
       <p class="block__key">주제 선정</p>
       <div class="block__val">
         <p>
-          호텔 예약과 eSIM, 투어 상품, 관광명소를 한곳에서 볼 수 있고,
-          사용자 스타일에 맞춘 일정을 만들어 주면서 여행 중 안전과 동선, 지출까지
-          관리할 수 있는 서비스를 만들고 싶었습니다.
+          <span class="cl">호텔 예약과 eSIM, 투어 상품, 관광명소를 한곳에서 볼 수 있고,</span>
+          <span class="cl">사용자 스타일에 맞춘 일정을 만들어 주면서</span>
+          <span class="cl">여행 중 안전과 동선, 지출까지 관리할 수 있는 서비스를 만들고 싶었습니다.</span>
         </p>
       </div>
     </div>
@@ -584,11 +602,11 @@
       <div class="case__main">
         <h3 class="case__name">장기 일정에서 LLM 응답 JSON이 잘림</h3>
         <dl class="case__track">
-          <div><dt>증상</dt><dd>14박 일정을 생성하면 JSON이 중간에서 끊기고 전체 파싱이 실패했습니다.</dd></div>
-          <div><dt>원인</dt><dd>모든 날짜와 장소를 단일 응답으로 요구해 모델의 최대 출력 토큰을 넘겼습니다.</dd></div>
-          <div><dt>조치</dt><dd>생성을 <strong>날짜별 도시 배정</strong>과 <strong>상세 일정 작성</strong> 2단계로 분리해 호출당 출력량을 줄였고, 파서에는 응답이 잘려도 마지막 완전한 일차까지 복구하는 폴백을 넣었습니다.</dd></div>
+          <div><dt>증상</dt><dd><span class="cl">14박 일정을 생성하면</span> <span class="cl">JSON이 중간에서 끊기고 전체 파싱이 실패했습니다.</span></dd></div>
+          <div><dt>원인</dt><dd><span class="cl">모든 날짜와 장소를 단일 응답으로 요구해</span> <span class="cl">모델의 최대 출력 토큰을 넘겼습니다.</span></dd></div>
+          <div><dt>조치</dt><dd><span class="cl">생성을 <strong>날짜별 도시 배정</strong>과 <strong>상세 일정 작성</strong> 2단계로 분리해</span> <span class="cl">호출당 출력량을 줄였고,</span> <span class="cl">파서에는 응답이 잘려도</span> <span class="cl">마지막 완전한 일차까지 복구하는 폴백을 넣었습니다.</span></dd></div>
         </dl>
-        <p class="case__out">장기 일정에서도 생성이 실패하지 않고, 부분 손실이 나도 유효한 일정을 내놓습니다.</p>
+        <p class="case__out"><span class="cl">장기 일정에서도 생성이 실패하지 않고,</span> <span class="cl">부분 손실이 나도 유효한 일정을 내놓습니다.</span></p>
       </div>
     </div>
 
@@ -597,11 +615,11 @@
       <div class="case__main">
         <h3 class="case__name">재시도가 오히려 한도 초과를 반복시킴</h3>
         <dl class="case__track">
-          <div><dt>증상</dt><dd>무료 등급 호출 한도에 걸려 AI 기능이 멈췄고, 재시도해도 회복되지 않았습니다.</dd></div>
-          <div><dt>원인</dt><dd>고정 간격 재시도가 동시에 실패한 요청들을 같은 시점에 몰아넣어 429를 다시 유발했습니다. 또 분당 한도 초과와 일일 할당량 소진을 같은 429로 취급해, 회복 불가능한 경우에도 최대 2분을 대기했습니다.</dd></div>
-          <div><dt>조치</dt><dd>지수 백오프에 무작위 지연을 더해 재시도 시점을 분산시키고, 두 종류의 429를 구분해 일일 할당량 소진은 즉시 중단하도록 했습니다. 재시도로도 실패하면 다른 제공사 모델로 전환합니다.</dd></div>
+          <div><dt>증상</dt><dd><span class="cl">무료 등급 호출 한도에 걸려 AI 기능이 멈췄고,</span> <span class="cl">재시도해도 회복되지 않았습니다.</span></dd></div>
+          <div><dt>원인</dt><dd><span class="sn"><span class="cl">고정 간격 재시도가 동시에 실패한 요청들을 같은 시점에 몰아넣어</span> <span class="cl">429를 다시 유발했습니다.</span></span><span class="sn"><span class="cl">또 분당 한도 초과와 일일 할당량 소진을 같은 429로 취급해,</span> <span class="cl">회복 불가능한 경우에도 최대 2분을 대기했습니다.</span></span></dd></div>
+          <div><dt>조치</dt><dd><span class="sn"><span class="cl">지수 백오프에 무작위 지연을 더해 재시도 시점을 분산시키고,</span> <span class="cl">두 종류의 429를 구분해</span> <span class="cl">일일 할당량 소진은 즉시 중단하도록 했습니다.</span></span><span class="sn"><span class="cl">재시도로도 실패하면 다른 제공사 모델로 전환합니다.</span></span></dd></div>
         </dl>
-        <p class="case__out">회복 불가능한 오류의 불필요한 대기가 사라지고, 한도에 걸려도 기능이 멈추지 않습니다.</p>
+        <p class="case__out"><span class="cl">회복 불가능한 오류의 불필요한 대기가 사라지고,</span> <span class="cl">한도에 걸려도 기능이 멈추지 않습니다.</span></p>
       </div>
     </div>
 
@@ -610,11 +628,11 @@
       <div class="case__main">
         <h3 class="case__name">예산 재조정에서 존재하지 않는 식당을 생성</h3>
         <dl class="case__track">
-          <div><dt>증상</dt><dd>예산을 줄여 달라고 하면 AI가 실제로 없는 식당을 만들어 내거나, 오히려 비용이 늘어난 결과를 돌려줬습니다.</dd></div>
-          <div><dt>원인</dt><dd>제약을 프롬프트에 적어 두는 것만으로는 모델이 지킨다고 보장할 수 없었습니다.</dd></div>
-          <div><dt>조치</dt><dd>지도 API로 반경 2km 안의 실제 저가 후보를 조회해 프롬프트에 주입하고, 응답이 그 목록에서 선택됐는지와 비용이 늘지 않았는지를 코드로 검증했습니다. 검증에 실패하면 가장 적합한 후보로 자동 교체합니다.</dd></div>
+          <div><dt>증상</dt><dd><span class="cl">예산을 줄여 달라고 하면</span> <span class="cl">AI가 실제로 없는 식당을 만들어 내거나,</span> <span class="cl">오히려 비용이 늘어난 결과를 돌려줬습니다.</span></dd></div>
+          <div><dt>원인</dt><dd><span class="cl">제약을 프롬프트에 적어 두는 것만으로는</span> <span class="cl">모델이 지킨다고 보장할 수 없었습니다.</span></dd></div>
+          <div><dt>조치</dt><dd><span class="sn"><span class="cl">지도 API로 반경 2km 안의 실제 저가 후보를 조회해 프롬프트에 주입하고,</span> <span class="cl">응답이 그 목록에서 선택됐는지와</span> <span class="cl">비용이 늘지 않았는지를 코드로 검증했습니다.</span></span><span class="sn"><span class="cl">검증에 실패하면 가장 적합한 후보로 자동 교체합니다.</span></span></dd></div>
         </dl>
-        <p class="case__out">AI 출력을 제안으로 두고 최종 결정은 코드가 내리는 구조가 되면서, 예산 재조정 결과를 신뢰할 수 있게 됐습니다.</p>
+        <p class="case__out"><span class="cl">AI 출력을 제안으로 두고 최종 결정은 코드가 내리는 구조가 되면서,</span> <span class="cl">예산 재조정 결과를 신뢰할 수 있게 됐습니다.</span></p>
       </div>
     </div>
   </section>
@@ -641,9 +659,11 @@
       <p class="block__key">개요</p>
       <div class="block__val">
         <p>
-          Spring AI 기반 청년 자산관리 서비스입니다.
-          고정지출 관리와 소비 가이드부터 맞춤형 청년정책·금융상품 추천까지
-          하나의 서비스에서 제공합니다.
+          <span class="sn"><span class="cl">Spring AI 기반 청년 자산관리 서비스입니다.</span></span>
+          <span class="sn">
+            <span class="cl">고정지출 관리와 소비 가이드부터</span>
+            <span class="cl">맞춤형 청년정책·금융상품 추천까지 하나의 서비스에서 제공합니다.</span>
+          </span>
         </p>
       </div>
     </div>
@@ -652,9 +672,15 @@
       <p class="block__key">주제 선정</p>
       <div class="block__val">
         <p>
-          첫 월급을 받은 사회초년생이 큰돈을 어떻게 쓰고 남은 돈을 어떻게 굴려야 하는지
-          가이드해 주는 서비스를 만들고 싶었습니다.
-          여기에 사용자 맞춤 정책을 붙여 아낄 수 있는 부분까지 한 서비스에서 보여 주려 했습니다.
+          <span class="sn">
+            <span class="cl">첫 월급을 받은 사회초년생이</span>
+            <span class="cl">큰돈을 어떻게 쓰고 남은 돈을 어떻게 굴려야 하는지</span>
+            <span class="cl">가이드해 주는 서비스를 만들고 싶었습니다.</span>
+          </span>
+          <span class="sn">
+            <span class="cl">여기에 사용자 맞춤 정책을 붙여</span>
+            <span class="cl">아낄 수 있는 부분까지 한 서비스에서 보여 주려 했습니다.</span>
+          </span>
         </p>
       </div>
     </div>
@@ -700,10 +726,10 @@
       <p class="block__key">핵심 구현</p>
       <div class="block__val">
         <ul class="list">
-          <li>AI가 답변하지 못한 질문을 관리자 화면에서 확인하고, 최소·최대 청크와 문단 분할 옵션을 지정해 문서를 즉시 임베딩</li>
-          <li>로그를 레벨별로 분리 저장 — <code>debug</code>·<code>info</code>·<code>warn</code>은 한 파일, <code>error</code>는 별도 파일. 1개월 지난 파일은 삭제</li>
-          <li>Spring Actuator로 API 응답속도를 수집해 관리자 화면에서 조회</li>
-          <li>카테고리별 사용 비율과 직전 주기를 막대그래프로 비교하는 소비 가이드</li>
+          <li><span class="cl">AI가 답변하지 못한 질문을 관리자 화면에서 확인하고,</span> <span class="cl">최소·최대 청크와 문단 분할 옵션을 지정해 문서를 즉시 임베딩</span></li>
+          <li><span class="sn"><span class="cl">로그를 레벨별로 분리 저장 —</span> <span class="cl"><code>debug</code>·<code>info</code>·<code>warn</code>은 한 파일,</span> <span class="cl"><code>error</code>는 별도 파일.</span></span><span class="sn"><span class="cl">1개월 지난 파일은 삭제</span></span></li>
+          <li><span class="cl">Spring Actuator로 API 응답속도를 수집해</span> <span class="cl">관리자 화면에서 조회</span></li>
+          <li><span class="cl">카테고리별 사용 비율과 직전 주기를</span> <span class="cl">막대그래프로 비교하는 소비 가이드</span></li>
         </ul>
       </div>
     </div>
@@ -793,28 +819,38 @@
           <div class="choice">
             <h3 class="choice__name">Spring Boot</h3>
             <p>
-              Spring AI가 VectorStore와 ChatClient 추상화로 RAG 파이프라인
-              (임베딩 → 검색 → LLM 응답)을 표준화해 주고,
-              Spring Security(OAuth2 · JWT)로 인증까지 한 생태계에서 처리할 수 있어 골랐습니다.
+              <span class="cl">Spring AI가 VectorStore와 ChatClient 추상화로</span>
+              <span class="cl">RAG 파이프라인(임베딩 → 검색 → LLM 응답)을 표준화해 주고,</span>
+              <span class="cl">Spring Security(OAuth2 · JWT)로 인증까지</span>
+              <span class="cl">한 생태계에서 처리할 수 있어 골랐습니다.</span>
             </p>
           </div>
           <div class="choice">
             <h3 class="choice__name">JSP가 아닌 React</h3>
             <p>
-              JSP는 화면 렌더링이 서버 로직과 강하게 묶여 있어
-              AI 응답 대기 상태나 비동기 챗봇 인터랙션 같은 UX를 만들기 어렵습니다.
-              React SPA + REST API로 분리해 AI 응답을 비동기로 처리하고,
-              프론트와 백엔드를 따로 배포·확장할 수 있게 했습니다.
+              <span class="sn">
+                <span class="cl">JSP는 화면 렌더링이 서버 로직과 강하게 묶여 있어</span>
+                <span class="cl">AI 응답 대기 상태나 비동기 챗봇 인터랙션 같은 UX를 만들기 어렵습니다.</span>
+              </span>
+              <span class="sn">
+                <span class="cl">React SPA + REST API로 분리해</span>
+                <span class="cl">AI 응답을 비동기로 처리하고,</span>
+                <span class="cl">프론트와 백엔드를 따로 배포·확장할 수 있게 했습니다.</span>
+              </span>
             </p>
           </div>
           <div class="choice">
             <h3 class="choice__name">pgvector가 아닌 Qdrant</h3>
             <p>
-              회원·지출·예적금 같은 정형 데이터는 이미 MySQL로 관리하고 있어,
-              임베딩 유사도 검색만 담당할 벡터 전용 DB가 필요했습니다.
-              RDB에 확장으로 얹는 대신 Qdrant를 따로 두어
-              정책·금융상품·고객상담 지식을 컬렉션 단위로 독립 관리하고,
-              HNSW 인덱싱으로 검색 성능을 확보했습니다.
+              <span class="sn">
+                <span class="cl">회원·지출·예적금 같은 정형 데이터는 이미 MySQL로 관리하고 있어,</span>
+                <span class="cl">임베딩 유사도 검색만 담당할 벡터 전용 DB가 필요했습니다.</span>
+              </span>
+              <span class="sn">
+                <span class="cl">RDB에 확장으로 얹는 대신 Qdrant를 따로 두어</span>
+                <span class="cl">정책·금융상품·고객상담 지식을 컬렉션 단위로 독립 관리하고,</span>
+                <span class="cl">HNSW 인덱싱으로 검색 성능을 확보했습니다.</span>
+              </span>
             </p>
           </div>
         </div>
@@ -825,9 +861,9 @@
       <p class="block__key">협업</p>
       <div class="block__val block__val--wide">
         <ul class="list">
-          <li>API 키와 DB 접속정보가 Git에 올라가지 않도록 <code>.env</code>와 <code>application.yaml</code>을 Notion으로 공유·버전관리해 팀원 간 설정값 불일치를 막았습니다.</li>
-          <li>남은 작업과 결정된 사항을 다시 확인할 수 있도록 회의록을 남겼습니다.</li>
-          <li>Discord 웹훅으로 특정 브랜치에 merge되면 어떤 작업이 끝났는지 알리고, 바로 pull 받아 이어 작업할 수 있게 했습니다.</li>
+          <li><span class="cl">API 키와 DB 접속정보가 Git에 올라가지 않도록</span> <span class="cl"><code>.env</code>와 <code>application.yaml</code>을 Notion으로 공유·버전관리해</span> <span class="cl">팀원 간 설정값 불일치를 막았습니다.</span></li>
+          <li><span class="cl">남은 작업과 결정된 사항을 다시 확인할 수 있도록</span> <span class="cl">회의록을 남겼습니다.</span></li>
+          <li><span class="cl">Discord 웹훅으로 특정 브랜치에 merge되면</span> <span class="cl">어떤 작업이 끝났는지 알리고,</span> <span class="cl">바로 pull 받아 이어 작업할 수 있게 했습니다.</span></li>
         </ul>
 
         <div class="shots">
@@ -859,11 +895,18 @@
         <div class="ab">
           <div class="ab__side">
             <p class="ab__key">문제</p>
-            <p>세 명이 각자 다른 세션에서 에이전트에 구현을 맡기다 보니, 요청 범위 밖 파일을 건드리거나 결정되지 않은 사항을 임의로 판단하는 일이 잦았습니다.</p>
+            <p>
+              <span class="cl">세 명이 각자 다른 세션에서 에이전트에 구현을 맡기다 보니,</span>
+              <span class="cl">요청 범위 밖 파일을 건드리거나</span>
+              <span class="cl">결정되지 않은 사항을 임의로 판단하는 일이 잦았습니다.</span>
+            </p>
           </div>
           <div class="ab__side">
             <p class="ab__key">해결</p>
-            <p>디렉토리별로 역할을 나눈 규칙 문서를 두고, 코드를 생성·수정하기 전에 반드시 참조하도록 규칙을 걸었습니다.</p>
+            <p>
+              <span class="cl">디렉토리별로 역할을 나눈 규칙 문서를 두고,</span>
+              <span class="cl">코드를 생성·수정하기 전에 반드시 참조하도록 규칙을 걸었습니다.</span>
+            </p>
           </div>
         </div>
       </div>
@@ -890,9 +933,9 @@
       <div class="case__main">
         <h3 class="case__name">2초 폴링이 참조 데이터까지 매번 다시 조회</h3>
         <dl class="case__track">
-          <div><dt>증상</dt><dd>2초 간격 폴링 구간에서 N+1이 발생하고 있었습니다. 관리자 화면의 API 응답속도 지표를 보고 찾아냈습니다.</dd></div>
-          <div><dt>원인</dt><dd>카드사 코드와 이름처럼 거의 바뀌지 않는 참조 데이터를 폴링할 때마다 다시 조회했습니다.</dd></div>
-          <div><dt>조치</dt><dd>사실상 화이트리스트로 판단해 Caffeine 캐시를 적용했습니다.</dd></div>
+          <div><dt>증상</dt><dd><span class="sn"><span class="cl">2초 간격 폴링 구간에서 N+1이 발생하고 있었습니다.</span></span><span class="sn"><span class="cl">관리자 화면의 API 응답속도 지표를 보고 찾아냈습니다.</span></span></dd></div>
+          <div><dt>원인</dt><dd><span class="cl">카드사 코드와 이름처럼 거의 바뀌지 않는 참조 데이터를</span> <span class="cl">폴링할 때마다 다시 조회했습니다.</span></dd></div>
+          <div><dt>조치</dt><dd><span class="cl">사실상 화이트리스트로 판단해</span> <span class="cl">Caffeine 캐시를 적용했습니다.</span></dd></div>
         </dl>
         <p class="case__out">폴링 주기마다 반복되던 참조 데이터 조회가 사라졌습니다.</p>
       </div>
@@ -904,10 +947,10 @@
         <h3 class="case__name">LazyInitializationException</h3>
         <dl class="case__track">
           <div><dt>증상</dt><dd>처리 단계에서 연관 엔티티에 접근하면 예외가 났습니다.</dd></div>
-          <div><dt>원인</dt><dd>조회 트랜잭션과 처리 트랜잭션이 분리돼 있어, LAZY 프록시에 접근하는 시점에는 이미 트랜잭션이 끝나 있었습니다.</dd></div>
-          <div><dt>조치</dt><dd><code>join fetch</code>로 프록시가 아닌 실제 객체를 미리 가져오도록 바꿨습니다.</dd></div>
+          <div><dt>원인</dt><dd><span class="cl">조회 트랜잭션과 처리 트랜잭션이 분리돼 있어,</span> <span class="cl">LAZY 프록시에 접근하는 시점에는</span> <span class="cl">이미 트랜잭션이 끝나 있었습니다.</span></dd></div>
+          <div><dt>조치</dt><dd><span class="cl"><code>join fetch</code>로 프록시가 아닌</span> <span class="cl">실제 객체를 미리 가져오도록 바꿨습니다.</span></dd></div>
         </dl>
-        <p class="case__out">트랜잭션 경계를 넘어가도 필요한 연관 데이터에 안전하게 접근합니다.</p>
+        <p class="case__out"><span class="cl">트랜잭션 경계를 넘어가도</span> <span class="cl">필요한 연관 데이터에 안전하게 접근합니다.</span></p>
       </div>
     </div>
 
@@ -917,8 +960,8 @@
         <h3 class="case__name">승인내역 수집의 레코드당 중복 확인 조회</h3>
         <dl class="case__track">
           <div><dt>증상</dt><dd>212건을 수집하는 데 조회가 216번 실행됐습니다.</dd></div>
-          <div><dt>원인</dt><dd>승인내역을 한 건씩 저장하면서, 이미 저장된 거래인지 확인하는 조회를 건마다 실행했습니다.</dd></div>
-          <div><dt>조치</dt><dd>승인번호를 모아 <code>IN</code>절로 한 번에 조회해 두고, 그 목록에 없는 건만 신규로 확정했습니다.</dd></div>
+          <div><dt>원인</dt><dd><span class="cl">승인내역을 한 건씩 저장하면서,</span> <span class="cl">이미 저장된 거래인지 확인하는 조회를 건마다 실행했습니다.</span></dd></div>
+          <div><dt>조치</dt><dd><span class="cl">승인번호를 모아 <code>IN</code>절로 한 번에 조회해 두고,</span> <span class="cl">그 목록에 없는 건만 신규로 확정했습니다.</span></dd></div>
         </dl>
         <p class="case__metric">
           <span class="case__from">216회</span>
@@ -932,7 +975,7 @@
 </article>
 
 <!-- ─────────────────────────  EDUCATION  ───────────────────────── -->
-<section class="sec" id="education" data-section="EDUCATION" data-num="05">
+<section class="sec" id="education" data-section="EDUCATION" data-num="03">
   <div class="sec__head">
     <p class="eyebrow">교육</p>
     <h2 class="sec__title">Education</h2>
@@ -970,7 +1013,7 @@
 </section>
 
 <!-- ─────────────────────────  CONTACT  ───────────────────────── -->
-<footer class="end" id="contact" data-section="CONTACT" data-num="06">
+<footer class="end" id="contact" data-section="CONTACT" data-num="04">
   <p class="end__eyebrow">연락</p>
   <p class="end__line">함께 일할 기회를<br>기다리고 있습니다.</p>
 
