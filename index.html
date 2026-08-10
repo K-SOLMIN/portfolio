@@ -24,6 +24,18 @@
   <div class="spine__num" data-spine-num>00</div>
 </div>
 
+<!-- 상세 읽기 모드 상단 바. 상세가 열렸을 때만 노출된다. -->
+<div class="reader" hidden>
+  <button type="button" class="reader__close" data-close-project>
+    <span aria-hidden="true">←</span> 목록으로
+  </button>
+  <p class="reader__title" data-reader-title></p>
+  <div class="reader__nav">
+    <button type="button" class="reader__step" data-step="-1">이전 프로젝트</button>
+    <button type="button" class="reader__step" data-step="1">다음 프로젝트</button>
+  </div>
+</div>
+
 <main id="main">
 
 <!-- ─────────────────────────  MASTHEAD  ───────────────────────── -->
@@ -120,40 +132,45 @@
     <h2 class="sec__title">Works</h2>
   </div>
 
-  <ol class="index">
-    <li class="index__item">
-      <a href="#waait">
-        <span class="index__no">01</span>
-        <span class="index__name">WAAIT</span>
-        <span class="index__desc">사내 그룹웨어 · 팀장</span>
-        <span class="index__date">2024.06 — 08</span>
-      </a>
-    </li>
-    <li class="index__item">
-      <a href="#sblim">
-        <span class="index__no">02</span>
-        <span class="index__name">SBLIM</span>
-        <span class="index__desc">시설·비품 예약 관리 · 팀장</span>
-        <span class="index__date">2024.06 — 08</span>
-      </a>
-    </li>
-    <li class="index__item">
-      <a href="#trip">
-        <span class="index__no">03</span>
-        <span class="index__name">Trip_Helper</span>
-        <span class="index__desc">AI 여행 일정 생성</span>
-        <span class="index__date">2026.05</span>
-      </a>
-    </li>
-    <li class="index__item">
-      <a href="#themoa">
-        <span class="index__no">04</span>
-        <span class="index__name">TheMoa</span>
-        <span class="index__desc">청년 자산관리 · 팀장</span>
-        <span class="index__date">2026.06 — 07</span>
-      </a>
-    </li>
-  </ol>
+  <!-- 책장: 책등 4권. 누르면 해당 프로젝트 상세가 전체화면으로 열린다. -->
+  <div class="shelf">
+    <ol class="shelf__row">
+      <li class="book book--a">
+        <a href="#waait" data-open="waait">
+          <span class="book__no">01</span>
+          <span class="book__name">WAAIT</span>
+          <span class="book__desc">사내 그룹웨어</span>
+          <span class="book__year">2024</span>
+        </a>
+      </li>
+      <li class="book book--b">
+        <a href="#sblim" data-open="sblim">
+          <span class="book__no">02</span>
+          <span class="book__name">SBLIM</span>
+          <span class="book__desc">시설·비품 예약</span>
+          <span class="book__year">2024</span>
+        </a>
+      </li>
+      <li class="book book--c">
+        <a href="#trip" data-open="trip">
+          <span class="book__no">03</span>
+          <span class="book__name">Trip_Helper</span>
+          <span class="book__desc">AI 여행 일정</span>
+          <span class="book__year">2026</span>
+        </a>
+      </li>
+      <li class="book book--d">
+        <a href="#themoa" data-open="themoa">
+          <span class="book__no">04</span>
+          <span class="book__name">TheMoa</span>
+          <span class="book__desc">청년 자산관리</span>
+          <span class="book__year">2026</span>
+        </a>
+      </li>
+    </ol>
+
+    <p class="shelf__hint">책등을 누르면 프로젝트 상세가 열립니다</p>
+  </div>
 </section>
 
 <!-- ─────────────────────────  01 WAAIT  ───────────────────────── -->
