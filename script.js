@@ -65,6 +65,49 @@
     });
   }
 
+  /* ── 산출물 전환 ────────────────────────────────────────────── */
+  // 탭을 누르면 아래 한 장이 그 산출물로 바뀐다. 확대 보기와 캡션도 함께 따라간다.
+  document.querySelectorAll('[data-docs]').forEach(function (docs) {
+    var tabs = Array.prototype.slice.call(docs.querySelectorAll('.docs__tab'));
+    var shotBtn = docs.querySelector('.shot__btn');
+    var img = shotBtn && shotBtn.querySelector('img');
+    var note = docs.querySelector('[data-docs-note]');
+    if (!tabs.length || !img || !note) return;
+
+    function show(tab) {
+      tabs.forEach(function (t) {
+        var on = t === tab;
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+        t.tabIndex = on ? 0 : -1;
+      });
+      img.src = tab.dataset.src;
+      img.alt = tab.dataset.alt || '';
+      shotBtn.dataset.full = tab.dataset.src;
+      shotBtn.dataset.cap = tab.dataset.cap || '';
+      note.textContent = tab.dataset.note || '';
+    }
+
+    docs.addEventListener('click', function (e) {
+      var tab = e.target.closest('.docs__tab');
+      if (tab) show(tab);
+    });
+
+    // 탭 목록은 좌우 키로 옮겨 다니는 것이 표준 동작이다
+    docs.addEventListener('keydown', function (e) {
+      var step = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (!step) return;
+      var i = tabs.indexOf(document.activeElement);
+      if (i === -1) return;
+      e.preventDefault();
+      var next = tabs[(i + step + tabs.length) % tabs.length];
+      next.focus();
+      show(next);
+    });
+
+    // 갈아 끼울 때 흰 칸이 잠깐 보이지 않도록 나머지를 미리 받아 둔다
+    tabs.forEach(function (t) { new Image().src = t.dataset.src; });
+  });
+
   /* ── 프로젝트 상세 읽기 모드 ────────────────────────────────── */
   // 책등을 누르면 해당 프로젝트만 남기고 전체화면으로 전환한다.
   // 주소의 해시를 유일한 상태로 두어 뒤로가기와 직접 링크가 그대로 동작한다.

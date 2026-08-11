@@ -307,20 +307,90 @@
 
     <div class="block">
       <p class="block__key">산출물</p>
-      <div class="block__val">
-        <ul class="tags"><li>WBS</li><li>ERD</li><li>기능명세서</li><li>유스케이스</li></ul>
+      <div class="block__val block__val--wide">
+        <!-- 산출물은 종류별로 한 장씩이다. 세로로 쌓지 않고 탭으로 갈아 끼운다. -->
+        <div class="docs" data-docs>
+          <div class="docs__tabs" role="tablist" aria-label="WAAIT 산출물">
+            <button type="button" class="docs__tab" role="tab" aria-selected="true"
+                    data-src="assets/waait/wbs.png"
+                    data-cap="WAAIT · WBS"
+                    data-alt="단계·업무·담당자·상태·진척률과 6~8월 간트 차트가 있는 WBS 시트"
+                    data-note="WBS — 요구사항 분석부터 설계 · 구현까지 단계별 업무를 쪼개 담당자와 기간, 진척률로 관리했습니다.">WBS</button>
+            <button type="button" class="docs__tab" role="tab" aria-selected="false" tabindex="-1"
+                    data-src="assets/waait/erd.jpg"
+                    data-cap="WAAIT · ERD"
+                    data-alt="사원, 조직, 근태, 메일, 일정 테이블의 관계를 그린 ERD"
+                    data-note="ERD — 사원 · 조직 · 근태 · 메일 · 일정을 한 스키마로 묶은 전체 관계도입니다.">ERD</button>
+            <button type="button" class="docs__tab" role="tab" aria-selected="false" tabindex="-1"
+                    data-src="assets/waait/spec.png"
+                    data-cap="WAAIT · 기능명세서"
+                    data-alt="사내 메일의 기능을 대분류·중분류·기능·상세설명으로 정리한 기능명세서"
+                    data-note="기능명세서 — 담당 도메인인 사내 메일을 대분류부터 개별 기능까지 나눠 동작을 문장으로 정의했습니다.">기능명세서</button>
+          </div>
+
+          <figure class="shot docs__view">
+            <button type="button" class="shot__btn" data-full="assets/waait/wbs.png" data-cap="WAAIT · WBS">
+              <img src="assets/waait/wbs.png" decoding="async"
+                   alt="단계·업무·담당자·상태·진척률과 6~8월 간트 차트가 있는 WBS 시트">
+            </button>
+            <figcaption data-docs-note>WBS — 요구사항 분석부터 설계 · 구현까지 단계별 업무를 쪼개 담당자와 기간, 진척률로 관리했습니다.</figcaption>
+          </figure>
+        </div>
       </div>
     </div>
 
     <div class="block">
-      <p class="block__key">설계</p>
+      <p class="block__key">화면</p>
       <div class="block__val block__val--wide">
-        <div class="shots shots--single">
-          <figure class="shot">
-            <button type="button" class="shot__btn" data-full="assets/waait/erd.jpg" data-cap="WAAIT · ERD">
-              <img src="assets/waait/erd.jpg" width="2400" height="1244" loading="lazy" decoding="async" alt="WAAIT 그룹웨어 ERD">
+        <!-- 가로로 긴 화면은 한 칸을 다 쓰고, 나머지는 틀 높이를 맞춰 캡션 줄을 정렬한다 -->
+        <div class="shots shots--frame">
+          <figure class="shot shot--wide">
+            <button type="button" class="shot__btn" data-full="assets/waait/main.png" data-cap="WAAIT · 메인">
+              <img src="assets/waait/main.png" width="2542" height="1265" loading="lazy" decoding="async" alt="근무시간과 안읽은 메일, 잔여 연차 요약 위에 조직도가 놓인 메인 화면">
             </button>
-            <figcaption>ERD</figcaption>
+            <figcaption>메인 — 근무시간 · 안읽은 메일 · 잔여 연차 요약, 조직도, 출퇴근 기록</figcaption>
+          </figure>
+          <figure class="shot">
+            <button type="button" class="shot__btn" data-full="assets/waait/mail-inbox.png" data-cap="WAAIT · 받은메일함">
+              <img src="assets/waait/mail-inbox.png" width="1647" height="1145" loading="lazy" decoding="async" alt="받은메일함, 스팸메일함, 사용자가 만든 내 메일함이 왼쪽에 놓인 메일 목록">
+            </button>
+            <figcaption>받은메일함 — 즐겨찾기 · 스팸 분류와 직접 만드는 내 메일함</figcaption>
+          </figure>
+          <figure class="shot">
+            <button type="button" class="shot__btn" data-full="assets/waait/mail-sent.png" data-cap="WAAIT · 보낸 메일함">
+              <img src="assets/waait/mail-sent.png" width="1650" height="998" loading="lazy" decoding="async" alt="보낸 메일마다 상대의 열람 여부가 표시된 목록">
+            </button>
+            <figcaption>보낸 메일함 — 수신자가 읽었는지, 언제 읽었는지 표시</figcaption>
+          </figure>
+          <figure class="shot shot--wide">
+            <button type="button" class="shot__btn" data-full="assets/waait/mail-compose.png" data-cap="WAAIT · 메일 쓰기">
+              <img src="assets/waait/mail-compose.png" width="1639" height="1007" loading="lazy" decoding="async" alt="수신자 칩과 첨부파일, 서식 편집기가 있는 메일 작성 화면">
+            </button>
+            <figcaption>메일 쓰기 — 다중 수신자, 첨부파일, 임시저장</figcaption>
+          </figure>
+          <figure class="shot shot--wide">
+            <button type="button" class="shot__btn" data-full="assets/waait/hr-list.png" data-cap="WAAIT · 인사조회">
+              <img src="assets/waait/hr-list.png" width="2559" height="657" loading="lazy" decoding="async" alt="검색과 상세조회, 표시 개수와 정렬 기준을 고를 수 있는 사원 목록">
+            </button>
+            <figcaption>인사조회 — 검색 · 상세조회, 페이지당 표시 수와 정렬 기준 선택</figcaption>
+          </figure>
+          <figure class="shot">
+            <button type="button" class="shot__btn" data-full="assets/waait/hr-detail.png" data-cap="WAAIT · 사원 상세">
+              <img src="assets/waait/hr-detail.png" width="1549" height="1118" loading="lazy" decoding="async" alt="연차 현황 도넛과 인적 사항, 소속 및 근무 정보가 나뉜 사원 상세 화면">
+            </button>
+            <figcaption>사원 상세 — 연차 현황, 인적 사항, 소속 및 근무</figcaption>
+          </figure>
+          <figure class="shot">
+            <button type="button" class="shot__btn" data-full="assets/waait/org.png" data-cap="WAAIT · 조직 관리">
+              <img src="assets/waait/org.png" width="1538" height="1080" loading="lazy" decoding="async" alt="왼쪽 부서 목록과 오른쪽 소속 팀 목록으로 나뉜 조직 관리 화면">
+            </button>
+            <figcaption>조직 관리 — 부서를 고르면 소속 팀을 같은 화면에서 등록 · 수정 · 삭제</figcaption>
+          </figure>
+          <figure class="shot shot--wide">
+            <button type="button" class="shot__btn" data-full="assets/waait/hr-enroll.png" data-cap="WAAIT · 사원 등록">
+              <img src="assets/waait/hr-enroll.png" width="2555" height="1093" loading="lazy" decoding="async" alt="기본 정보와 주소, 소속 정보를 입력받는 사원 등록 폼">
+            </button>
+            <figcaption>사원 등록 — 영문 이름으로 사내 메일 자동 생성, 직책에 따라 팀 선택 제한</figcaption>
           </figure>
         </div>
       </div>

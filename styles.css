@@ -675,6 +675,30 @@ body.is-reading #main { padding-top: 58px; }
   height: auto;
 }
 
+/* 한 벌로 찍은 화면이라도 세로 길이가 제각각이라, 나란히 놓으면 캡션 줄이 어긋난다.
+   2단에 들어가는 것만 틀 높이를 맞춘다. */
+.shots--frame .shot:not(.shot--wide) .shot__btn {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+}
+.shots--frame .shot:not(.shot--wide) .shot__btn img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* 가로로 긴 화면은 2단에 넣으면 글씨가 뭉갠다. 한 줄을 다 쓰되 세로로는 넘치지 않게 한다. */
+.shot--wide { grid-column: 1 / -1; }
+.shot--wide .shot__btn { display: grid; place-items: center; }
+.shot--wide img {
+  width: auto;
+  max-width: 100%;
+  max-height: 76vh;
+}
+
 /* 캡션은 한글 문장이 길다. 고정폭 11.5px으로는 읽히지 않았다. */
 .shot figcaption {
   font-family: var(--body);
@@ -684,6 +708,51 @@ body.is-reading #main { padding-top: 58px; }
   margin-top: 12px;
   padding-left: 13px;
   border-left: 2px solid var(--rule);
+}
+
+/* ── 산출물 전환 ─────────────────────────────────────────────── */
+/* 산출물은 종류별로 한 장씩이라 나란히 놓으면 문서가 아니라 썸네일이 된다.
+   탭으로 갈아 끼워 한 장을 크게 본다. */
+.docs__tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: clamp(16px, 2vw, 22px);
+}
+
+.docs__tab {
+  font-family: var(--mono);
+  font-size: 13px;
+  line-height: 1;
+  padding: 9px 12px;
+  border: 1px solid var(--chip);
+  background: var(--raised);
+  color: var(--ink);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: border-color .2s var(--t), background .2s var(--t), color .2s var(--t);
+}
+.docs__tab:hover { border-color: var(--cobalt); color: var(--cobalt); }
+
+.docs__tab[aria-selected="true"] {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}
+.docs__tab[aria-selected="true"]:hover { color: var(--paper); border-color: var(--ink); }
+
+/* 세 문서의 가로세로비가 제각각이다. 틀을 고정해 갈아 끼울 때 아래 내용이 밀리지 않게 한다. */
+.docs__view .shot__btn {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+.docs__view .shot__btn img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 /* ═══════════════════════════  LIGHTBOX  ═══════════════════════════ */
@@ -1037,6 +1106,8 @@ body.is-reading #main { padding-top: 58px; }
   body.is-reading #main { padding-top: 52px; }
 
   .shots { grid-template-columns: minmax(0, 1fr); }
+  /* 폭이 좁아지면 16:9 틀 안의 문서가 너무 작아진다. 틀을 세로로 넓혀 준다. */
+  .docs__view .shot__btn { aspect-ratio: 4 / 3; }
   .lb__img { max-height: calc(100vh - 130px); }
 }
 
