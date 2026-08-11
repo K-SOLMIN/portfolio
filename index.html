@@ -382,7 +382,7 @@
   </div>
 
   <section class="cases">
-    <p class="cases__title">문제 해결 기록 <span>2건</span></p>
+    <p class="cases__title">문제 해결 기록 <span>3건</span></p>
 
     <div class="case">
       <p class="case__id">A</p>
@@ -399,6 +399,19 @@
 
     <div class="case">
       <p class="case__id">B</p>
+      <div class="case__main">
+        <h3 class="case__name">프론트 결제값을 그대로 믿던 흐름 개선</h3>
+        <dl class="case__track">
+          <div><dt>증상</dt><dd><span class="cl">결제 화면에서 계산한 총액 · 할인 · 포인트 값을</span> <span class="cl">백엔드가 그대로 주문 정보로 저장하고 있었습니다.</span></dd></div>
+          <div><dt>원인</dt><dd><span class="cl">카카오페이 결제 준비 요청을 빠르게 붙이는 데 집중하면서,</span> <span class="cl">클라이언트 값과 서버 검증값의 경계를 분리하지 못했습니다.</span></dd></div>
+          <div><dt>조치</dt><dd><span class="cl">서버 세션의 장바구니 상품으로 총액을 다시 계산하고,</span> <span class="cl">보유 쿠폰 · 포인트 한도를 검증한 뒤 카카오페이 승인까지 확인하고 주문을 적재하도록 바꿨습니다.</span></dd></div>
+        </dl>
+        <p class="case__out"><span class="cl">DOM 조작이나 성공 URL 직접 호출로</span> <span class="cl">주문 금액이 바뀌는 흐름을 막고, 결제 완료 처리의 신뢰 기준을 서버로 옮겼습니다.</span></p>
+      </div>
+    </div>
+
+    <div class="case">
+      <p class="case__id">C</p>
       <div class="case__main">
         <h3 class="case__name">고른 개수가 매번 달라 쿼리를 고정할 수 없음</h3>
         <dl class="case__track">
