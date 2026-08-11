@@ -155,10 +155,7 @@
     document.body.classList.add('is-reading');
     reader.hidden = false;
 
-    var idx = ORDER.indexOf(id);
     readerTitle.textContent = article.dataset.section || '';
-    reader.querySelector('[data-step="-1"]').disabled = idx === 0;
-    reader.querySelector('[data-step="1"]').disabled = idx === ORDER.length - 1;
 
     openId = id;
     // 'auto'는 CSS의 scroll-behavior(smooth)를 그대로 따른다. 전환 중 스크롤이
@@ -295,15 +292,6 @@
         if (window.history.state && window.history.state.proj) window.history.back();
         else { window.history.replaceState(null, '', '#works'); syncFromLocation(); }
         return;
-      }
-
-      var step = e.target.closest('[data-step]');
-      if (step && openId) {
-        var next = ORDER[ORDER.indexOf(openId) + Number(step.dataset.step)];
-        if (!next) return;
-        openedFrom = document.querySelector('[data-open="' + next + '"]');
-        window.history.pushState({ proj: next }, '', '#' + next);
-        syncFromLocation();
       }
     });
 

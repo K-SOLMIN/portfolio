@@ -338,17 +338,20 @@ strong { font-weight: 600; }
   justify-content: space-between;
   gap: 14px;
   width: clamp(72px, 9vw, 118px);
-  height: clamp(292px, 30vw, 396px);
   padding: 20px 0 17px;
   text-decoration: none;
   border: 1px solid var(--ink);
   transition: transform .32s var(--t), box-shadow .32s var(--t);
 }
 
-/* 실제 책장처럼 판형을 조금씩 다르게 둔다 */
-.book--b a { height: clamp(268px, 27.6vw, 364px); }
-.book--d a { height: clamp(282px, 28.9vw, 381px); }
-.book--e a { height: clamp(276px, 28.3vw, 374px); }
+/* 판형은 프로젝트의 규모를 따른다 — 작은 것부터 세운다.
+   SBLIM < Apricot < WAAIT < Trip_Helper < TheMoa
+   책등 글자가 세로로 눕는 만큼, 각 단은 제목·설명이 들어갈 길이보다 넉넉해야 한다. */
+.book--b a { height: clamp(259px, 26.6vw, 351px); } /* SBLIM       */
+.book--e a { height: clamp(273px, 28.1vw, 371px); } /* Apricot     */
+.book--a a { height: clamp(289px, 29.7vw, 392px); } /* WAAIT       */
+.book--c a { height: clamp(304px, 31.3vw, 413px); } /* Trip_Helper */
+.book--d a { height: clamp(319px, 32.8vw, 433px); } /* TheMoa      */
 
 .book__no,
 .book__year {
@@ -448,8 +451,7 @@ body.is-flipping .proj.is-open { animation: none; }
 }
 .reader[hidden] { display: none; }
 
-.reader__close,
-.reader__step {
+.reader__close {
   font-family: var(--body);
   font-size: 13.5px;
   font-weight: 500;
@@ -460,13 +462,11 @@ body.is-flipping .proj.is-open { animation: none; }
   cursor: pointer;
   transition: background .2s, color .2s, border-color .2s;
 }
-.reader__close:hover,
-.reader__step:not(:disabled):hover {
+.reader__close:hover {
   background: var(--ink);
   color: var(--paper);
   border-color: var(--ink);
 }
-.reader__step:disabled { opacity: .35; cursor: default; }
 
 .reader__title {
   font-family: var(--display);
@@ -475,8 +475,6 @@ body.is-flipping .proj.is-open { animation: none; }
   font-size: 17px;
   letter-spacing: -.01em;
 }
-
-.reader__nav { display: flex; gap: 8px; }
 
 /* 읽기 중에는 색인·소개·교육·연락처와 좌측 스파인을 감춘다 */
 body.is-reading .spine,
@@ -1239,8 +1237,10 @@ body.is-reading #main { padding-top: 58px; }
 .reveal.is-in { opacity: 1; transform: none; }
 
 /* ═══════════════════════════  RESPONSIVE  ═══════════════════════════ */
-@media (max-width: 1080px) {
-  .book__desc { display: none; } /* 책등이 좁아지면 설명부터 뺀다 */
+/* 규모 순으로 판형을 나눈 뒤로 가장 낮은 책(SBLIM·Apricot)의 여백이 먼저 마른다.
+   책등이 짧아지면 제목이 눌리기 전에 설명부터 뺀다. */
+@media (max-width: 1240px) {
+  .book__desc { display: none; }
 }
 
 @media (max-width: 900px) {
@@ -1287,13 +1287,25 @@ body.is-reading #main { padding-top: 58px; }
   .case__track > div { grid-template-columns: minmax(0, 1fr); gap: 4px; }
   .case__track dt { padding-top: 0; }
 
-  .book a { width: clamp(52px, 15vw, 70px); height: clamp(230px, 62vw, 300px); }
-  .book--b a, .book--d a, .book--e a { height: clamp(214px, 57vw, 278px); }
+  .book a { width: clamp(52px, 15vw, 70px); }
+  /* 좁은 화면에서도 규모 순서는 그대로 두고 폭만 좁힌다 */
+  .book--b a { height: clamp(200px, 49.6vw, 240px); } /* SBLIM       */
+  .book--e a { height: clamp(216px, 52.7vw, 255px); } /* Apricot     */
+  .book--a a { height: clamp(232px, 55.8vw, 270px); } /* WAAIT       */
+  .book--c a { height: clamp(250px, 58.9vw, 285px); } /* Trip_Helper */
+  .book--d a { height: clamp(268px, 62.0vw, 300px); } /* TheMoa      */
   .book a:hover { transform: translateY(-9px); }
 
   .reader { padding: 10px var(--pad-x); gap: 10px; }
-  .reader__title { display: none; } /* 좁은 화면에서는 이동 버튼을 우선한다 */
-  .reader__close, .reader__step { padding: 7px 11px; font-size: 12.5px; }
+  /* 이동 버튼이 없으니 좁은 화면에서도 제목을 남긴다. 길면 줄인다. */
+  .reader__title {
+    font-size: 15px;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .reader__close { padding: 7px 11px; font-size: 12.5px; }
   body.is-reading #main { padding-top: 52px; }
 
   .shots { grid-template-columns: minmax(0, 1fr); }
