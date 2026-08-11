@@ -316,7 +316,7 @@ strong { font-weight: 600; }
 }
 
 /* ═══════════════════════════  BOOKSHELF  ═══════════════════════════ */
-/* 프로젝트 4건을 책등으로 세운다. 책등을 누르면 상세가 전체화면으로 열린다. */
+/* 프로젝트 5건을 책등으로 세운다. 책등을 누르면 상세가 전체화면으로 열린다. */
 .shelf { padding-top: clamp(20px, 3vw, 40px); }
 
 .shelf__row {
@@ -348,6 +348,7 @@ strong { font-weight: 600; }
 /* 실제 책장처럼 판형을 조금씩 다르게 둔다 */
 .book--b a { height: clamp(268px, 27.6vw, 364px); }
 .book--d a { height: clamp(282px, 28.9vw, 381px); }
+.book--e a { height: clamp(276px, 28.3vw, 374px); }
 
 .book__no,
 .book__year {
@@ -376,7 +377,8 @@ strong { font-weight: 600; }
   white-space: nowrap;
 }
 
-/* 표지 배색 — 팔레트 안에서 톤만 4단계로 나눈다 */
+/* 표지 배색 — 팔레트 안에서 톤만 나눈다. 가장 오래된 한 권만 따뜻한 색을 쓴다 */
+.book--e a { background: #a9552e;       color: #f7eee7;       border-color: #a9552e; }
 .book--a a { background: var(--ink);    color: var(--paper);  }
 .book--b a { background: var(--raised); color: var(--ink);    }
 .book--c a { background: var(--cobalt); color: #eef1ff;       border-color: var(--cobalt); }
@@ -1107,7 +1109,7 @@ body.is-reading #main { padding-top: 58px; }
   .case__track dt { padding-top: 0; }
 
   .book a { width: clamp(52px, 15vw, 70px); height: clamp(230px, 62vw, 300px); }
-  .book--b a, .book--d a { height: clamp(214px, 57vw, 278px); }
+  .book--b a, .book--d a, .book--e a { height: clamp(214px, 57vw, 278px); }
   .book a:hover { transform: translateY(-9px); }
 
   .reader { padding: 10px var(--pad-x); gap: 10px; }
