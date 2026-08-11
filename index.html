@@ -331,7 +331,7 @@
                     data-alt="회원, 배송지, 장바구니, 주문, 주문상세, 상품, 옵션, 쿠폰, 포인트 테이블의 관계를 그린 ERD"
                     data-note="ERD — 회원 · 배송지 · 장바구니 · 주문 · 상품 · 옵션 · 쿠폰 · 포인트를 한 스키마로 묶은 전체 관계도입니다.">ERD</button>
             <button type="button" class="docs__tab" role="tab" aria-selected="false" tabindex="-1"
-                    data-src="assets/apricot/spec.png"
+                    data-src="assets/apricot/spec2.png"
                     data-cap="Apricot · 기능정의서"
                     data-alt="페이지·요구사항·기능정의·기능·기능설명으로 정리한 기능정의서"
                     data-note="기능정의서 — 페이지 단위로 요구사항을 쪼개고, 주문배송조회처럼 상태가 바뀌는 기능은 흐름까지 문장으로 정의했습니다.">기능정의서</button>
@@ -885,16 +885,10 @@
             <figcaption>생성 결과 — 일차별 일정과 Google Maps 동선</figcaption>
           </figure>
           <figure class="shot">
-            <button type="button" class="shot__btn" data-full="assets/trip/live-d1.jpg" data-cap="Trip_Helper · 여행 중 1일차">
-              <img src="assets/trip/live-d1.jpg" width="1800" height="948" loading="lazy" decoding="async" alt="라이브 지도와 예산 소진율, 피로도 관리가 있는 여행 중 화면">
+            <button type="button" class="shot__btn" data-full="assets/trip/live-d2.jpg" data-cap="Trip_Helper · 여행 중">
+              <img src="assets/trip/live-d2.jpg" width="1800" height="947" loading="lazy" decoding="async" alt="동선 지도와 위험 구간 안전 우회, 날씨 기반 옷차림 안내가 있는 여행 중 화면">
             </button>
-            <figcaption>여행 중 — 라이브 지도, 예산 소진율, 피로도 관리</figcaption>
-          </figure>
-          <figure class="shot">
-            <button type="button" class="shot__btn" data-full="assets/trip/live-d2.jpg" data-cap="Trip_Helper · 여행 중 2일차">
-              <img src="assets/trip/live-d2.jpg" width="1800" height="947" loading="lazy" decoding="async" alt="위험 구간 안전 우회와 날씨 기반 옷차림 안내가 있는 여행 중 화면">
-            </button>
-            <figcaption>여행 중 — 위험 구간 안전 우회, 날씨 기반 옷차림 안내</figcaption>
+            <figcaption>여행 중 — 동선 지도, 위험 구간 안전 우회, 날씨 기반 옷차림 안내</figcaption>
           </figure>
           <figure class="shot">
             <button type="button" class="shot__btn" data-full="assets/trip/hotel-list.jpg" data-cap="Trip_Helper · 숙소 검색">
@@ -1260,22 +1254,152 @@
 
     <div class="block">
       <p class="block__key">코딩 에이전트</p>
-      <div class="block__val">
-        <div class="ab">
-          <div class="ab__side">
-            <p class="ab__key">문제</p>
-            <p>
-              <span class="cl">세 명이 각자 다른 세션에서 에이전트에 구현을 맡기다 보니,</span>
-              <span class="cl">요청 범위 밖 파일을 건드리거나</span>
-              <span class="cl">결정되지 않은 사항을 임의로 판단하는 일이 잦았습니다.</span>
-            </p>
+      <div class="block__val block__val--wide">
+        <div class="agent-guide">
+          <div class="agent-tree">
+            <ul class="agent-tree__list agent-tree__list--root">
+              <li>
+                <div class="agent-node agent-node--root">
+                  <span class="agent-node__icon agent-node__icon--folder" aria-hidden="true"></span>
+                  <strong>themore_final_project/</strong>
+                </div>
+                <ul class="agent-tree__list">
+                  <li>
+                    <div class="agent-node">
+                      <span class="agent-node__icon agent-node__icon--folder" aria-hidden="true"></span>
+                      <strong>backend/</strong>
+                    </div>
+                    <ul class="agent-tree__list">
+                      <li>
+                        <div class="agent-node">
+                          <span class="agent-node__icon agent-node__icon--folder" aria-hidden="true"></span>
+                          <strong>.claude/</strong>
+                        </div>
+                        <ul class="agent-tree__list">
+                          <li>
+                            <div class="agent-node agent-node--file">
+                              <span class="agent-node__dot" aria-hidden="true"></span>
+                              <span class="agent-node__name">CLAUDE.md</span>
+                              <span class="agent-node__desc">backend/ 작업 시 자동 로드 — backendrule.md·erd.md 확인 지시</span>
+                            </div>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li>
+                    <div class="agent-node">
+                      <span class="agent-node__icon agent-node__icon--folder" aria-hidden="true"></span>
+                      <strong>frontend/</strong>
+                    </div>
+                    <ul class="agent-tree__list">
+                      <li>
+                        <div class="agent-node">
+                          <span class="agent-node__icon agent-node__icon--folder" aria-hidden="true"></span>
+                          <strong>.claude/</strong>
+                        </div>
+                        <ul class="agent-tree__list">
+                          <li>
+                            <div class="agent-node agent-node--file">
+                              <span class="agent-node__dot" aria-hidden="true"></span>
+                              <span class="agent-node__name">CLAUDE.md</span>
+                              <span class="agent-node__desc">frontend/ 작업 시 자동 로드 — 구조·API 통신 규칙 명시</span>
+                            </div>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li>
+                    <div class="agent-node">
+                      <span class="agent-node__icon agent-node__icon--folder" aria-hidden="true"></span>
+                      <strong>plan/</strong>
+                    </div>
+                    <ul class="agent-tree__list">
+                      <li>
+                        <div class="agent-node">
+                          <span class="agent-node__icon agent-node__icon--folder" aria-hidden="true"></span>
+                          <strong>rule/</strong>
+                        </div>
+                        <ul class="agent-tree__list">
+                          <li>
+                            <div class="agent-node agent-node--file">
+                              <span class="agent-node__dot" aria-hidden="true"></span>
+                              <span class="agent-node__name">backendrule.md</span>
+                              <span class="agent-node__desc">백엔드 공통 규약 — 패키지 구조·API 응답 규약</span>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="agent-node agent-node--file">
+                              <span class="agent-node__dot" aria-hidden="true"></span>
+                              <span class="agent-node__name">frontendrule.md</span>
+                              <span class="agent-node__desc">프론트엔드 공통 규약 — feature-based 구조·axios 호출 단일화</span>
+                            </div>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <div class="agent-node">
+                          <span class="agent-node__icon agent-node__icon--folder" aria-hidden="true"></span>
+                          <strong>md/</strong>
+                        </div>
+                        <ul class="agent-tree__list">
+                          <li>
+                            <div class="agent-node agent-node--file">
+                              <span class="agent-node__dot" aria-hidden="true"></span>
+                              <span class="agent-node__name">erd.md</span>
+                              <span class="agent-node__desc">테이블 컬럼명·연관관계·제약조건 원본</span>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="agent-node agent-node--file">
+                              <span class="agent-node__dot" aria-hidden="true"></span>
+                              <span class="agent-node__name">{기능}.md</span>
+                              <span class="agent-node__desc">다수 — 기능별 작업지시서·검증 기준</span>
+                            </div>
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <div class="agent-node">
+                          <span class="agent-node__icon agent-node__icon--folder" aria-hidden="true"></span>
+                          <strong>view/</strong>
+                        </div>
+                        <ul class="agent-tree__list">
+                          <li>
+                            <div class="agent-node agent-node--file">
+                              <span class="agent-node__dot" aria-hidden="true"></span>
+                              <span class="agent-node__name">{화면}.md</span>
+                              <span class="agent-node__desc">다수 — 화면별 작업지시서</span>
+                            </div>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
           </div>
-          <div class="ab__side">
-            <p class="ab__key">해결</p>
-            <p>
-              <span class="cl">디렉토리별로 역할을 나눈 규칙 문서를 두고,</span>
-              <span class="cl">코드를 생성·수정하기 전에 반드시 참조하도록 규칙을 걸었습니다.</span>
-            </p>
+
+          <div class="agent-copy">
+            <div class="agent-copy__item">
+              <p class="agent-copy__key">문제</p>
+              <p>
+                <span class="cl">세 명이 각자 다른 세션에서 에이전트에 구현을 맡기다 보니,</span>
+                <span class="cl">요청 범위 밖 파일을 건드리거나</span>
+                <span class="cl">결정되지 않은 사항을 임의로 판단하는 일이 잦았습니다.</span>
+              </p>
+            </div>
+            <div class="agent-copy__item">
+              <p class="agent-copy__key">해결</p>
+              <p>
+                <span class="cl">디렉터리별로 역할을 나눈 규칙 문서를 두고,</span>
+                <span class="cl">코드를 생성·수정하기 전에 반드시 참조하도록 규칙을 걸었습니다.</span>
+              </p>
+            </div>
           </div>
         </div>
       </div>
