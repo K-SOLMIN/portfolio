@@ -531,8 +531,30 @@
 
     <div class="block">
       <p class="block__key">산출물</p>
-      <div class="block__val">
-        <ul class="tags"><li>ERD</li><li>기능명세서</li></ul>
+      <div class="block__val block__val--wide">
+        <!-- 산출물은 종류별로 한 장씩이다. 세로로 쌓지 않고 탭으로 갈아 끼운다. -->
+        <div class="docs" data-docs>
+          <div class="docs__tabs" role="tablist" aria-label="SBLIM 산출물">
+            <button type="button" class="docs__tab" role="tab" aria-selected="true"
+                    data-src="assets/sblim/erd.jpg"
+                    data-cap="SBLIM · ERD"
+                    data-alt="사용자, 시설, 비품, 예약, 반납, 제한기간, 알림 테이블의 관계를 그린 ERD"
+                    data-note="ERD — 사용자 · 시설 · 비품 · 예약 · 반납 · 제한기간 · 알림을 한 스키마로 묶어 직접 설계했습니다.">ERD</button>
+            <button type="button" class="docs__tab" role="tab" aria-selected="false" tabindex="-1"
+                    data-src="assets/sblim/spec.png"
+                    data-cap="SBLIM · 기능정의서"
+                    data-alt="구분·대분류·중분류·기능·상세설명과 필수 데이터, 중요도로 정리한 기능정의서"
+                    data-note="기능정의서 — 알림과 로그를 구분 · 대분류부터 개별 기능까지 나누고, 알림 문구와 기록 항목까지 정의했습니다.">기능정의서</button>
+          </div>
+
+          <figure class="shot docs__view">
+            <button type="button" class="shot__btn" data-full="assets/sblim/erd.jpg" data-cap="SBLIM · ERD">
+              <img src="assets/sblim/erd.jpg" decoding="async"
+                   alt="사용자, 시설, 비품, 예약, 반납, 제한기간, 알림 테이블의 관계를 그린 ERD">
+            </button>
+            <figcaption data-docs-note>ERD — 사용자 · 시설 · 비품 · 예약 · 반납 · 제한기간 · 알림을 한 스키마로 묶어 직접 설계했습니다.</figcaption>
+          </figure>
+        </div>
       </div>
     </div>
   </div>
@@ -843,6 +865,40 @@
     </div>
 
     <div class="block">
+      <p class="block__key">산출물</p>
+      <div class="block__val block__val--wide">
+        <!-- 산출물은 종류별로 한 장씩이다. 세로로 쌓지 않고 탭으로 갈아 끼운다. -->
+        <div class="docs docs--tall" data-docs>
+          <div class="docs__tabs" role="tablist" aria-label="TheMoa 산출물">
+            <button type="button" class="docs__tab" role="tab" aria-selected="true"
+                    data-src="assets/themoa/erd.jpg"
+                    data-cap="TheMoa · ERD"
+                    data-alt="회원, 카드 거래내역, 고정지출, 정책, 금융상품, 문의 테이블의 관계를 그린 ERD"
+                    data-note="ERD — 회원 · 카드 거래내역 · 고정지출 · 정책 · 금융상품 · 고객문의를 한 스키마로 묶은 전체 관계도입니다.">ERD</button>
+            <button type="button" class="docs__tab" role="tab" aria-selected="false" tabindex="-1"
+                    data-src="assets/themoa/usecase.png"
+                    data-cap="TheMoa · 유스케이스 다이어그램"
+                    data-alt="사용자와 CODEF API, 금감원 API, 정책 API, 스케줄러를 액터로 두고 기능을 연결한 유스케이스 다이어그램"
+                    data-note="유스케이스 다이어그램 — 사용자와 외부 API · 스케줄러를 액터로 나누고, 카드내역 동기화부터 정책 추천까지 기능 간 include 관계를 정리했습니다.">유스케이스</button>
+            <button type="button" class="docs__tab" role="tab" aria-selected="false" tabindex="-1"
+                    data-src="assets/themoa/spec.png"
+                    data-cap="TheMoa · 기능정의서"
+                    data-alt="요구사항ID, 대분류, 중분류, 요구사항명과 상세 설명, 출력예시, 중요도, 난이도로 정리한 기능정의서"
+                    data-note="기능정의서 — 담당 도메인을 요구사항ID 단위로 쪼개 동작과 출력예시, 중요도 · 난이도, 변경이력까지 남겼습니다.">기능정의서</button>
+          </div>
+
+          <figure class="shot docs__view">
+            <button type="button" class="shot__btn" data-full="assets/themoa/erd.jpg" data-cap="TheMoa · ERD">
+              <img src="assets/themoa/erd.jpg" loading="lazy" decoding="async"
+                   alt="회원, 카드 거래내역, 고정지출, 정책, 금융상품, 문의 테이블의 관계를 그린 ERD">
+            </button>
+            <figcaption data-docs-note>ERD — 회원 · 카드 거래내역 · 고정지출 · 정책 · 금융상품 · 고객문의를 한 스키마로 묶은 전체 관계도입니다.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+
+    <div class="block">
       <p class="block__key">사용자 화면</p>
       <div class="block__val block__val--wide">
         <div class="shots">
@@ -1022,13 +1078,22 @@
 
     <div class="block">
       <p class="block__key">배포</p>
-      <div class="block__val">
+      <div class="block__val block__val--wide">
         <ul class="list">
           <li>ALB를 단일 진입점으로 구성</li>
           <li>Web · App EC2, RDS, Qdrant를 private 영역에 배치</li>
           <li>SSH 접속을 제거하고 AWS SSM Session Manager 사용</li>
           <li>ALB + ACM으로 HTTPS 처리 및 HTTP 리다이렉트 적용</li>
         </ul>
+
+        <div class="shots shots--single">
+          <figure class="shot shot--wide">
+            <button type="button" class="shot__btn" data-full="assets/themoa/deploy.png" data-cap="TheMoa · 배포 구조">
+              <img src="assets/themoa/deploy.png" width="669" height="569" loading="lazy" decoding="async" alt="ALB를 진입점으로 두고 private subnet에 app EC2, web EC2, RDS를 배치한 AWS 배포 구조도">
+            </button>
+            <figcaption>배포 구조 — private subnet의 app · web EC2와 RDS, public subnet의 ALB · NAT gateway</figcaption>
+          </figure>
+        </div>
       </div>
     </div>
   </div>
