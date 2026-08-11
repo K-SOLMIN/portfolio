@@ -925,8 +925,8 @@ body.is-reading #main { padding-top: 58px; }
   content: "";
   position: absolute;
   left: -19px;
-  top: 14px;
-  width: 22px;
+  top: 10px;
+  width: 16px;
   height: 1px;
   background: rgba(83, 158, 218, .44);
 }
@@ -1313,7 +1313,8 @@ body.is-reading #main { padding-top: 58px; }
   }
   .agent-tree__list:not(.agent-tree__list--root) > li::before {
     left: -15px;
-    width: 18px;
+    top: 10px;
+    width: 12px;
   }
   .agent-node {
     font-size: 11px;
