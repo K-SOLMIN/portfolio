@@ -1087,76 +1087,80 @@
     </div>
 
     <div class="block">
-      <p class="block__key">사용자 화면</p>
+      <p class="block__key">화면</p>
       <div class="block__val block__val--wide">
-        <div class="shots">
-          <figure class="shot">
-            <button type="button" class="shot__btn" data-full="assets/themoa/dashboard.jpg" data-cap="TheMoa · 대시보드">
-              <img src="assets/themoa/dashboard.jpg" width="1800" height="945" loading="lazy" decoding="async" alt="소비가이드, 고정지출, 금융상품, 정책을 한 화면에 모은 대시보드">
-            </button>
-            <figcaption>대시보드 — 소비가이드 · 고정지출 · 금융상품 · 정책</figcaption>
-          </figure>
-          <figure class="shot">
-            <button type="button" class="shot__btn" data-full="assets/themoa/dayguide.jpg" data-cap="TheMoa · 소비가이드">
-              <img src="assets/themoa/dayguide.jpg" width="1800" height="914" loading="lazy" decoding="async" alt="하루 권장액과 카테고리별 사용 비율, 잉여금을 보여주는 소비가이드">
-            </button>
-            <figcaption>소비가이드 — 하루 권장액, 카테고리별 사용 비율, 잉여금</figcaption>
-          </figure>
-          <figure class="shot">
-            <button type="button" class="shot__btn" data-full="assets/themoa/fixed-expense.jpg" data-cap="TheMoa · 고정지출">
-              <img src="assets/themoa/fixed-expense.jpg" width="1800" height="947" loading="lazy" decoding="async" alt="고정지출 관리 화면">
-            </button>
-            <figcaption>고정지출</figcaption>
-          </figure>
-          <figure class="shot">
-            <button type="button" class="shot__btn" data-full="assets/themoa/transaction-detail.jpg" data-cap="TheMoa · 지출 상세">
-              <img src="assets/themoa/transaction-detail.jpg" width="1800" height="947" loading="lazy" decoding="async" alt="이전 날짜 지출 그래프와 계좌이체성 결제 등록이 있는 지출 상세">
-            </button>
-            <figcaption>지출 상세 — 이전 날짜 지출 그래프, 계좌이체성 결제 등록</figcaption>
-          </figure>
-          <figure class="shot">
-            <button type="button" class="shot__btn" data-full="assets/themoa/category-detail.jpg" data-cap="TheMoa · 카테고리 사용 비율">
-              <img src="assets/themoa/category-detail.jpg" width="1800" height="919" loading="lazy" decoding="async" alt="직전 주기와 막대그래프로 비교하는 카테고리별 사용 비율">
-            </button>
-            <figcaption>카테고리 사용 비율 — 직전 주기와 막대그래프로 비교</figcaption>
-          </figure>
-          <figure class="shot">
-            <button type="button" class="shot__btn" data-full="assets/themoa/customer-service.jpg" data-cap="TheMoa · 고객센터">
-              <img src="assets/themoa/customer-service.jpg" width="1800" height="943" loading="lazy" decoding="async" alt="FAQ와 RAG 기반 상담 챗봇이 있는 고객센터">
-            </button>
-            <figcaption>고객센터 — FAQ와 RAG 기반 상담 챗봇</figcaption>
-          </figure>
-        </div>
-      </div>
-    </div>
+        <!-- 화면이 열 장이다. 세로로 쌓으면 스크롤만 길어져 위쪽 바에서 골라 한 장씩 크게 본다. -->
+        <div class="docs docs--shots" data-docs>
+          <div class="docs__bar">
+            <div class="docs__row">
+              <p class="docs__group">사용자</p>
+              <div class="docs__tabs" role="tablist" aria-label="TheMoa 사용자 화면">
+                <button type="button" class="docs__tab" role="tab" aria-selected="true"
+                        data-src="assets/themoa/dashboard.jpg"
+                        data-cap="TheMoa · 대시보드"
+                        data-alt="소비가이드, 고정지출, 금융상품, 정책을 한 화면에 모은 대시보드"
+                        data-note="대시보드 — 소비가이드 · 고정지출 · 금융상품 · 정책">대시보드</button>
+                <button type="button" class="docs__tab" role="tab" aria-selected="false" tabindex="-1"
+                        data-src="assets/themoa/dayguide.jpg"
+                        data-cap="TheMoa · 소비가이드"
+                        data-alt="하루 권장액과 카테고리별 사용 비율, 잉여금을 보여주는 소비가이드"
+                        data-note="소비가이드 — 하루 권장액, 카테고리별 사용 비율, 잉여금">소비가이드</button>
+                <button type="button" class="docs__tab" role="tab" aria-selected="false" tabindex="-1"
+                        data-src="assets/themoa/fixed-expense.jpg"
+                        data-cap="TheMoa · 고정지출"
+                        data-alt="고정지출 관리 화면"
+                        data-note="고정지출">고정지출</button>
+                <button type="button" class="docs__tab" role="tab" aria-selected="false" tabindex="-1"
+                        data-src="assets/themoa/transaction-detail.jpg"
+                        data-cap="TheMoa · 지출 상세"
+                        data-alt="이전 날짜 지출 그래프와 계좌이체성 결제 등록이 있는 지출 상세"
+                        data-note="지출 상세 — 이전 날짜 지출 그래프, 계좌이체성 결제 등록">지출 상세</button>
+                <button type="button" class="docs__tab" role="tab" aria-selected="false" tabindex="-1"
+                        data-src="assets/themoa/category-detail.jpg"
+                        data-cap="TheMoa · 카테고리 사용 비율"
+                        data-alt="직전 주기와 막대그래프로 비교하는 카테고리별 사용 비율"
+                        data-note="카테고리 사용 비율 — 직전 주기와 막대그래프로 비교">카테고리</button>
+                <button type="button" class="docs__tab" role="tab" aria-selected="false" tabindex="-1"
+                        data-src="assets/themoa/customer-service.jpg"
+                        data-cap="TheMoa · 고객센터"
+                        data-alt="FAQ와 RAG 기반 상담 챗봇이 있는 고객센터"
+                        data-note="고객센터 — FAQ와 RAG 기반 상담 챗봇">고객센터</button>
+              </div>
+            </div>
 
-    <div class="block">
-      <p class="block__key">관리자 화면</p>
-      <div class="block__val block__val--wide">
-        <div class="shots">
-          <figure class="shot">
-            <button type="button" class="shot__btn" data-full="assets/themoa/admin-faq.jpg" data-cap="TheMoa · 관리자 FAQ">
-              <img src="assets/themoa/admin-faq.jpg" width="1800" height="945" loading="lazy" decoding="async" alt="AI가 답변하지 못한 질문을 모아 보여주는 관리자 FAQ 화면">
+            <div class="docs__row">
+              <p class="docs__group">관리자</p>
+              <div class="docs__tabs" role="tablist" aria-label="TheMoa 관리자 화면">
+                <button type="button" class="docs__tab" role="tab" aria-selected="false" tabindex="-1"
+                        data-src="assets/themoa/admin-faq.jpg"
+                        data-cap="TheMoa · 관리자 FAQ"
+                        data-alt="AI가 답변하지 못한 질문을 모아 보여주는 관리자 FAQ 화면"
+                        data-note="FAQ — AI가 답변하지 못한 질문 확인">FAQ</button>
+                <button type="button" class="docs__tab" role="tab" aria-selected="false" tabindex="-1"
+                        data-src="assets/themoa/admin-knowledge.jpg"
+                        data-cap="TheMoa · 관리자 지식 보강"
+                        data-alt="청크 크기와 문단 분할 옵션을 지정해 문서를 임베딩하는 화면"
+                        data-note="지식 보강 — 청크 크기 · 문단 분할 옵션을 지정해 문서 임베딩">지식 보강</button>
+                <button type="button" class="docs__tab" role="tab" aria-selected="false" tabindex="-1"
+                        data-src="assets/themoa/admin-latency.jpg"
+                        data-cap="TheMoa · 관리자 응답속도"
+                        data-alt="Spring Actuator로 수집한 API 응답속도 조회 화면"
+                        data-note="응답속도 — Spring Actuator로 수집한 API 지연 조회">응답속도</button>
+                <button type="button" class="docs__tab" role="tab" aria-selected="false" tabindex="-1"
+                        data-src="assets/themoa/admin-logfile.jpg"
+                        data-cap="TheMoa · 관리자 로그"
+                        data-alt="레벨별로 분리 저장된 로그 파일 조회 화면"
+                        data-note="로그 — 레벨별 분리 저장, 1개월 경과 파일 삭제">로그</button>
+              </div>
+            </div>
+          </div>
+
+          <figure class="shot docs__view">
+            <button type="button" class="shot__btn" data-full="assets/themoa/dashboard.jpg" data-cap="TheMoa · 대시보드">
+              <img src="assets/themoa/dashboard.jpg" width="1800" height="945" loading="lazy" decoding="async"
+                   alt="소비가이드, 고정지출, 금융상품, 정책을 한 화면에 모은 대시보드">
             </button>
-            <figcaption>FAQ — AI가 답변하지 못한 질문 확인</figcaption>
-          </figure>
-          <figure class="shot">
-            <button type="button" class="shot__btn" data-full="assets/themoa/admin-knowledge.jpg" data-cap="TheMoa · 관리자 지식 보강">
-              <img src="assets/themoa/admin-knowledge.jpg" width="1800" height="947" loading="lazy" decoding="async" alt="청크 크기와 문단 분할 옵션을 지정해 문서를 임베딩하는 화면">
-            </button>
-            <figcaption>지식 보강 — 청크 크기 · 문단 분할 옵션을 지정해 문서 임베딩</figcaption>
-          </figure>
-          <figure class="shot">
-            <button type="button" class="shot__btn" data-full="assets/themoa/admin-latency.jpg" data-cap="TheMoa · 관리자 응답속도">
-              <img src="assets/themoa/admin-latency.jpg" width="1800" height="946" loading="lazy" decoding="async" alt="Spring Actuator로 수집한 API 응답속도 조회 화면">
-            </button>
-            <figcaption>응답속도 — Spring Actuator로 수집한 API 지연 조회</figcaption>
-          </figure>
-          <figure class="shot">
-            <button type="button" class="shot__btn" data-full="assets/themoa/admin-logfile.jpg" data-cap="TheMoa · 관리자 로그">
-              <img src="assets/themoa/admin-logfile.jpg" width="1800" height="548" loading="lazy" decoding="async" alt="레벨별로 분리 저장된 로그 파일 조회 화면">
-            </button>
-            <figcaption>로그 — 레벨별 분리 저장, 1개월 경과 파일 삭제</figcaption>
+            <figcaption data-docs-note>대시보드 — 소비가이드 · 고정지출 · 금융상품 · 정책</figcaption>
           </figure>
         </div>
       </div>

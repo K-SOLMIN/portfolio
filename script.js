@@ -65,8 +65,10 @@
     });
   }
 
-  /* ── 산출물 전환 ────────────────────────────────────────────── */
-  // 탭을 누르면 아래 한 장이 그 산출물로 바뀐다. 확대 보기와 캡션도 함께 따라간다.
+  /* ── 산출물·화면 전환 ───────────────────────────────────────── */
+  // 탭을 누르면 아래 한 장이 그 그림으로 바뀐다. 확대 보기와 캡션도 함께 따라간다.
+  var idle = window.requestIdleCallback || function (fn) { return window.setTimeout(fn, 1200); };
+
   document.querySelectorAll('[data-docs]').forEach(function (docs) {
     var tabs = Array.prototype.slice.call(docs.querySelectorAll('.docs__tab'));
     var shotBtn = docs.querySelector('.shot__btn');
@@ -104,8 +106,11 @@
       show(next);
     });
 
-    // 갈아 끼울 때 흰 칸이 잠깐 보이지 않도록 나머지를 미리 받아 둔다
-    tabs.forEach(function (t) { new Image().src = t.dataset.src; });
+    // 갈아 끼울 때 흰 칸이 잠깐 보이지 않도록 나머지를 미리 받아 둔다.
+    // 화면 탭까지 붙어 장수가 늘었다. 첫 화면 로딩과 다투지 않도록 한가할 때 받는다.
+    idle(function () {
+      tabs.forEach(function (t) { new Image().src = t.dataset.src; });
+    });
   });
 
   /* ── 프로젝트 상세 읽기 모드 ────────────────────────────────── */

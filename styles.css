@@ -767,6 +767,42 @@ body.is-reading #main { padding-top: 58px; }
   height: min(74vh, 860px);
 }
 
+/* ── 화면 전환 바 ────────────────────────────────────────────── */
+/* 화면은 열 장이 넘어간다. 2단 그리드로 쌓으면 한 장 한 장은 썸네일이 되고
+   읽는 사람은 스크롤만 내리게 된다. 위쪽 바에서 골라 한 장을 크게 본다. */
+.docs__bar {
+  display: grid;
+  gap: 10px;
+  margin-bottom: clamp(16px, 2vw, 22px);
+}
+
+/* 열 개를 한 줄에 늘어놓으면 무엇이 무엇인지 구분되지 않는다. 화면 종류로 묶는다. */
+.docs__row {
+  display: grid;
+  grid-template-columns: minmax(0, auto) minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+}
+
+/* 한글 라벨은 본문 서체로. 탭 첫 줄의 글자에 눈높이를 맞춘다. */
+.docs__group {
+  font-family: var(--body);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--slate);
+  white-space: nowrap;
+  padding-top: 10px;
+}
+
+.docs__bar .docs__tabs { margin-bottom: 0; }
+
+/* 화면은 문서보다 가로로 길다. 틀 비율을 스크린샷에 맞춰야 위아래 여백이 남지 않는다.
+   높이는 한 화면을 넘지 않도록 잘라 둔다. */
+.docs--shots .docs__view .shot__btn {
+  aspect-ratio: 1.9 / 1;
+  max-height: 76vh;
+}
+
 /* ═══════════════════════════  LIGHTBOX  ═══════════════════════════ */
 .lb {
   border: 0;
@@ -1120,6 +1156,10 @@ body.is-reading #main { padding-top: 58px; }
   .shots { grid-template-columns: minmax(0, 1fr); }
   /* 폭이 좁아지면 16:9 틀 안의 문서가 너무 작아진다. 틀을 세로로 넓혀 준다. */
   .docs__view .shot__btn { aspect-ratio: 4 / 3; }
+
+  /* 라벨을 옆에 두면 탭에 남는 폭이 없다. 위로 올린다. */
+  .docs__row { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+  .docs__group { padding-top: 0; }
   .lb__img { max-height: calc(100vh - 130px); }
 }
 
